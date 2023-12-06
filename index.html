@@ -35,32 +35,82 @@
 
         /* Ensure that the menu icon is visible at smaller screen sizes */
         @media (max-width: 7680px) {
-            .menu-icon {
-                display: inline-block;
-            }
-
-            nav ul {
-                display: none;
-                list-style: none; /* Remove default list-style */
-                padding: 0; /* Remove any default padding */
-            }
-
-            .menu.active ul {
-                display: block;
-            }
-        }
-
-        /* Style the menu links (change color to #929292;) */
-        nav a {
-            color: #929292 !important;
-            text-decoration: none; /* Remove underlines from links */
-        }
-
-        /* Center the menu */
-        .menu {
-            text-align: center;
+              .menu-icon {
+            position: fixed;
+            top: 0px;
+            left: 20px;
+            z-index: 2;
             font-size: 36px;
+            cursor: pointer;
+            margin: 0px auto;
+            padding-top: 0px;
+            background-color: #4c4c4c;
         }
+
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(76, 76, 76, 0.85); /* Adjust the alpha value (0.8 in this example) for transparency */
+            color: #929292;
+            display: none;
+            z-index: 1;
+        }
+
+        .menu-content {
+            text-align: center;
+            padding: 50px;
+            text-decoration: none;
+            font-size: 3.5rem;
+            color: #929292;
+        }
+      
+        .menu-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-content li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menu-content a {
+        text-decoration: none;
+        color: #929292;
+        display: block; /* Add this line to make the entire area clickable */
+        padding: 10px; /* Add padding for better clickability */
+        }
+       .menu-content li.active a {
+        color: white;
+        text-decoration: none;
+        }
+
+        .close {
+    position: absolute;
+    top: 85%; /* Adjust this value to your preference */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 100px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+        
+        
+            
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
 
         /* Style header and footer */
         header {
@@ -143,14 +193,7 @@
             text-align: center;
         }
 
-        .menu-icon {
-
-            font-size: 24px;
-            cursor: pointer;
-            text-align: center;
-            margin: 0 auto;
-            padding-top: 20px;
-        }
+     
 
         h1 {
             text-align: center;
@@ -165,23 +208,7 @@
 
 
 
-          /* Style the Close button */
-          .close {
-              position: absolute;
-              top: 15px;
-              right: 35px;
-              color: white;
-              font-size: 30px;
-              font-weight: bold;
-              transition: 0.3s;
-          }
-
-          .close:hover,
-          .close:focus {
-              color: #bbb;
-              text-decoration: none;
-              cursor: pointer;
-          }
+    
           /* Style the gallery container with Flexbox */
           .gallery-container {
               display: flex;
@@ -336,11 +363,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-<div class="page-container">
-  <header>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
+    <div class="menu-icon" onclick="toggleMenu()">
+        <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
+    </div>
+
+    <div class="menu-container" id="menuContainer">
+        <span class="close" onclick="closeMenu()">&times;</span>
+        <div class="menu-content">
+            <ul>
+                <li  class="active"><a href="../index.html">Home</a></li><br>
+                <li><a href="../gwlior/gwalior.html">Gwalior,Calcutta and Ranmee</a></li>
+                <li><a href="../loved/loved.html">Family<a></li>
+                <li><a href="../friends/friends.html">Friends</a></li><br>
+                <li><a href="../teacher/teacher.html">Education </a></li><br>
+                <li><a href="../artist/artist.html">Artist and Chef</a></li>
+                <li><a href="../sari/sari.html">Her sari collection</a></li><br>
+                <li><a href="../lucknow/lucknow.html">Lucknow days</a></li>
+            </ul>
         </div>
+    </div>
+
+  <header>
+     <div class="page-container">   
         <h1>Kalpana Mathur</h1>
         <!-- Play button for the title -->
         <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
@@ -355,20 +399,7 @@ Pkease may we ask you to share the following 3 things with us:
  </p>
     </header>
 
-    <nav>
-        <div class="menu">
-            <ul>
-                <li  class="active"><a href="../index.html">Home</a></li><br>
-                <li><a href="../gwlior/gwalior.html">Gwalior,Calcutta and Ranmee</a></li>
-                <li><a href="../loved/loved.html">Family<a></li>
-                <li><a href="../friends/friends.html">Friends</a></li><br>
-                <li><a href="../teacher/teacher.html">Education </a></li><br>
-                <li><a href="../artist/artist.html">Artist and Chef</a></li>
-                <li><a href="../sari/sari.html">Her sari collection</a></li><br>
-                <li><a href="../lucknow/lucknow.html">Lucknow days</a></li>
-            </ul>
-        </div>
-    </nav>
+    
 
     <!-- Slideshow Container -->
     <div class="slideshow-container">
@@ -516,6 +547,17 @@ has Alzheimers. She speaks everyday with her 2 daughters - one in Sydney and the
 
 
         <script>
+           function toggleMenu() {
+        var menuContainer = document.getElementById('menuContainer');
+        var currentDisplay = window.getComputedStyle(menuContainer).display;
+
+        menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+    }
+
+    function closeMenu() {
+        var menuContainer = document.getElementById('menuContainer');
+        menuContainer.style.display = 'none';
+    }
             var slideIndex = 0;
             var manualSlideIndex = 0;
 
@@ -581,19 +623,7 @@ has Alzheimers. She speaks everyday with her 2 daughters - one in Sydney and the
                 slides[manualSlideIndex - 1].style.display = "block";
             }
 
-            // Toggle the menu
-            function toggleMenu() {
-                var menu = document.querySelector('.menu');
-                var isMenuActive = menu.classList.contains('active');
-
-                // Toggle the 'active' class for the menu
-                menu.classList.toggle('active', !isMenuActive);
-
-                if (!isMenuActive) {
-                    // If the menu is now active, scroll to the top of the page
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            }
+      
 
             var titleAudio; // Declare the audio variable globally
 
