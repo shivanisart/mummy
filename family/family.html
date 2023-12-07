@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kalpana Mathur</title>
+    <style>
+        /* Basic CSS styling */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #4c4c4c;
+            margin: 0;
+            font-size: 24px;
+            color: #929292;
+            padding: 0;
+        }
+
+        /* Style header and footer */
+        header {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: left;
+            padding: 10px;
+            font-size: 16px; /* Adjust the font size to your preference */
+        }
+
+
+        /* Apply max-width to the page container */
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto; /* To center the content horizontally */
+            padding: 0 20px; /* Add padding to create spacing from the edges */
+        }
+
+
+        /* Ensure that the menu icon is visible at smaller screen sizes */
+        @media (max-width: 7680px) {
+              .menu-icon {
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            z-index: 2;
+            font-size: 10px;
+            cursor: pointer;
+            margin: 0px auto;
+            padding-top: 0px;
+            background-color: #4c4c4c;
+        }
+
+        .menu-container {
+            position: fixed;
+            top: 10;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(76, 76, 76, 0.85); /* Adjust the alpha value (0.8 in this example) for transparency */
+            color: #929292;
+            display: none;
+            z-index: 1;
+        }
+
+        .menu-content {
+            text-align: center;
+            padding: 50px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #929292;
+        }
+      
+        .menu-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-content li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menu-content a {
+        text-decoration: none;
+        color: #929292;
+        display: block; /* Add this line to make the entire area clickable */
+        padding: 10px; /* Add padding for better clickability */
+        }
+       .menu-content li.active a {
+        color: white;
+        text-decoration: none;
+        }
+
+        .close {
+    position: absolute;
+    top: 85%; /* Adjust this value to your preference */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+        
+        
+            
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+
+        /* Style header and footer */
+        header {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        /* Add CSS for the Font Awesome icons here */
+        .footer-icons {
+            font-size: 16px;
+        }
+
+        .footer-icons a {
+            color: #929292;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Style the icons on hover (optional) */
+        .footer-icons a:hover {
+            color: #07BFF;
+        }
+
+        /* Style the video container */
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Style the video captions (toggle button) */
+        .video-caption {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #4c4c4c;
+            color: #929292;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Style the video descriptions (hidden by default) */
+        .video-description {
+            display: none;
+            font-size: 24px;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        /* Style the video posters (thumbnails) */
+        /* Style the video posters (thumbnails) */
+        .video-item video {
+            width: 100%; /* Set the video width to 100% */
+            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
+            object-fit: cover; /* Ensure the video covers the entire container */
+          }
+
+          .video-item video::poster {
+            width: 100%; /* Set the video width to 100% */
+            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
+            object-fit: cover; /* Ensure the video covers the entire container */
+
+      }
+      /* Center the header content */
+          .header-content {
+            text-align: center;
+        }
+
+     
+
+        h1 {
+            text-align: left;
+        }
+
+          /* Style for the additional text */
+          .header-description {
+            font-size: 24px; /* Adjust the font size as needed */
+            margin-top: 10px; /* Add margin to separate it from the title */
+            color: #929292; /* Set the text color */
+          }
+
+
+
+    
+          /* Style the gallery container with Flexbox */
+          .gallery-container {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              max-width: 1000px;
+              margin: 0 auto;
+          }
+          /* Center-align the text box */
+          .slideshow-text-center {
+              text-align: center;
+              padding: 20px; /* Add padding for spacing */
+          }
+
+          /* Left-align the text inside the text box */
+          .slideshow-text-left {
+              display: inline-block; /* Ensure inline block for left alignment */
+              text-align: left; /* Left-align the text inside the box */
+          }
+
+
+
+ 
+
+    /* Slideshow container */
+      .slideshow-container {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+/* Hide slides by default */
+    .mySlides {
+      display: none;
+    }
+
+    /* Next and previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color:  #929292;
+      font-weight: bold;
+      font-size: 24px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    /* Style for slideshow container */
+    .slideshow-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Style for slideshow container */
+    .manual-slideshow-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Style for individual slides */
+    .mySlides1 {
+      display: none;
+    }
+
+    /* Style for slide images */
+    .mySlides1 img {
+      width: 100%;
+      height: auto;
+    }
+
+
+    /* Style for captions */
+    .caption {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      background-color:#4c4c4c;
+      color: #929292;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Style for prev/next buttons */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 36px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px;
+      background-color: #4c4c4c;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: #4c4c4c;
+    }
+
+    /* Style for the captions (initially hidden) */
+    .mySlides1 .caption {
+
+        position: absolute;
+        background-color: #4c4c4c;
+        color: #929292;
+        padding: 5px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        transition: 0.2s;
+    }
+
+    /* Show captions on hover */
+    .mySlides1:hover .caption {
+        display: block;
+    }
+
+         .event-details {
+        display: none;
+        background-color: #4c4c4c; /* Set the background color to match your design */
+        color: #929292; /* Set the text color */
+        font-size: 24px;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    .event-button {
+        background-color: transparent;
+        color: #929292;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+    }
+
+    .close-details {
+        color: #929292;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+
+
+    </style>
+    <!-- Include the Font Awesome CSS stylesheet -->
+    <style>
+    /* Basic CSS styling */
+    /* ... (your existing CSS code) ... */
+
+    /* Add CSS for the Font Awesome icons here */
+    .fa {
+        font-family: FontAwesome, sans-serif;
+    }
+</style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <img src="icon.jpg" alt="Menu" style="width: 50px; height: 50px;">
+    </div>
+
+    <div class="menu-container" id="menuContainer">
+        <span class="close" onclick="closeMenu()">&times;</span>
+        <div class="menu-content">
+            <ul>
+                <li  class="active"><a href="../index.html">Home</a></li><br>
+                <li><a href="../gwlior/gwalior.html">Gwalior,Calcutta and Ranmee</a></li>
+                <li><a href="../loved/loved.html">Family<a></li>
+                <li><a href="../friends/friends.html">Friends</a></li><br>
+                <li><a href="../teacher/teacher.html">Students</a></li><br>
+                <li><a href="../artist/artist.html">Artist and Chef</a></li>
+                <li><a href="../sari/sari.html">Her sari collection</a></li><br>
+                <li><a href="../lucknow/lucknow.html">Lucknow days</a></li>
+            </ul>
+        </div>
+    </div>
+
+  <header>
+     <div class="page-container">   
+        <h1>Kalpana Mathur</h1>
+        <!-- Play button for the title -->
+        <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
+        <!-- Additional text below the header -->
+        <p class="header-description">Six month before her 80th birthday, we sent a message to those who know and love Kalpana:<br> <br>
+
+"Mummy, Mimi, Kalpana, Mrs Mathur- whichever name you know her by, turns 80 next April...." <br><br>
+We asked for a word, a sentence or a phrase that best describes her; 
+and a memory of an experience first hand. 
+<br><br> The replies were overwhelming. 
+ </p>
+    </header>
+
+    
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="mySlides1 fade">
+            <img src="Cover.jpg" alt="Slide 1">
+            <div class="caption">She is so stylish. </div>
+        </div>
+
+
+          <!-- Slide 3 -->
+          <div class="mySlides1 fade">
+              <img src="50anniv.jpg" alt="Slide 3">
+              <div class="caption"> Mrs Mathur was like us: young at heart.</div>
+          </div>
+
+
+            <!-- Slide 2 -->
+              <div class="mySlides1 fade">
+                  <img src="Sari.jpg" alt="Slide 2">
+                  <div class="caption">She had a fantastic sari collection!</div>
+            </div>
+
+
+
+          <!-- Slide 5 -->
+          <div class="mySlides1 fade">
+              <img src="mummyalone.jpg" alt="Slide 5">
+              <div class="caption">I was totally in awe of her elegance and style. </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="mySlides1 fade">
+              <img src="Warmeyes.jpg" alt="Slide 6">
+              <div class="caption"> She has such Warm eyes. </div>
+          </div>
+
+
+            <!-- Slide 7 -->
+            <div class="mySlides1 fade">
+                <img src="mum2022.jpg" alt="Slide 7">
+                <div class="caption"> Still looks so lovely at eighty</div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="mySlides1 fade">
+                <img src="Graceful.jpg" alt="Slide 4">
+                <div class="caption"> Each day she looks more elegant and graceful </div>
+            </div>
+
+            <!-- Slide 8 -->
+            <div class="mySlides1 fade">
+                <img src="elegant.jpg" alt="Slide 8">
+                <div class="caption"> I was such a big fan of Mrs. Mathur. Her looks, kajal lined eyes, absolutely slick bun, and her deep voice, the way she explained HS concepts, it was so very fantastic....she was way ahead of everyone. </div>
+            </div>
+        <!-- Add more slides as needed -->
+
+        <!-- Next and Previous Buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+
+    <!-- Additional text below the picture -->
+  <div class="slideshow-text-center">
+    <div class="slideshow-text-left">
+        <!-- Event 1 -->
+        <div class="event-container">
+            <button class="event-button" onclick="toggleEvent('event-details-1')">1944 Gwalior</button>
+            <div class="event-details" id="event-details-1">
+                <span class="close-details" onclick="closeEvent('event-details-1')">&times;</span>
+                <p>
+                    Details about 1944 Gwalior:
+                    <!-- Add event-specific details here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="event-container">
+            <button class="event-button" onclick="toggleEvent('event-details-2')">1954 Love of Art</button>
+            <div class="event-details" id="event-details-2">
+                <span class="close-details" onclick="closeEvent('event-details-2')">&times;</span>
+                <p>
+                    Details about 1954 Love of Art:
+                    <!-- Add event-specific details here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="event-container">
+            <button class="event-button" onclick="toggleEvent('event-details-3')">1963 London and Dublin</button>
+            <div class="event-details" id="event-details-3">
+                <span class="close-details" onclick="closeEvent('event-details-3')">&times;</span>
+                <p>
+                    Details about 1963 London and Dublin:
+                    <!-- Add event-specific details here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Event 4 -->
+        <div class="event-container">
+            <button class="event-button" onclick="toggleEvent('event-details-4')">1965 The wedding at Golf Links</button>
+            <div class="event-details" id="event-details-4">
+                <span class="close-details" onclick="closeEvent('event-details-4')">&times;</span>
+                <p>
+                    Details about 1965 The wedding at Golf Link, Delhi:
+                    <!-- Add event-specific details here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Event 5 -->
+        <div class="event-container">
+            <button class="event-button" onclick="toggleEvent('event-details-5')">1966 A star is born</button>
+            <div class="event-details" id="event-details-5">
+                <span class="close-details" onclick="closeEvent('event-details-5')">&times;</span>
+                <p>
+                    Details about 1966 A star is born:
+                    <!-- Add event-specific details here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Event 6 -->
+        <div class="event-container">
+            <button class="event-button" onclick="toggleEvent('event-details-6')">1969 Another masterpiece</button>
+            <div class="event-details" id="event-details-6">
+                <span class="close-details" onclick="closeEvent('event-details-6')">&times;</span>
+                <p>
+                    Details about 1969 Potential for a masterpiece:
+                    <!-- Add event-specific details here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Event 7 -->
+        <div class="event-container">
+            <button class="event-button" onclick="toggleEvent('event-details-7')">1976 Music at Bhatkhnde</button>
+            <div class="event-details" id="event-details-7">
+                <span class="close-details" onclick="closeEvent('event-details-7')">&times;</span>
+                <p>
+                    Details about 1976 Music at Bhatkhnde:
+                    <!-- Add event-specific details here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Event 8 -->
+        <div class="event-container">
+            <button class="event-button" onclick="toggleEvent('event-details-8')">1978 Back to school</button>
+            <div class="event-details" id="event-details-8">
+                <span class="close-details" onclick="closeEvent('event-details-8')">&times;</span>
+                <p>
+                    Details about 1978 Back to school:
+                    <!-- Add event-specific details here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Event 9 -->
+        <div class="event-container">
+            <button class="event-button" onclick="toggleEvent('event-details-9')">1979 Made for each other</button>
+            <div class="event-details" id="event-details-9">
+                 <span class="close-details" onclick="closeEvent('event-details-9')">&times;</span>
+                <p>
+                    Details about 1979 Made for each other:
+                    <!-- Add event-specific details here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Event 10 -->
+        <div class="event-container">
+            <button class="event-button" onclick="toggleEvent('event-details-10')">1980-1998 Social work </button>
+            <div class="event-details" id="event-details-10">
+                 <span class="close-details" onclick="closeEvent('event-details-10')">&times;</span>
+                <p>
+                   Kalpana Mathur demonstrated very early in her life that the fuel for excellence is personal commitment and a positive attitude.
+At the age of 19, she represented British Airways (then BOAC) at
+the inauguration of their Sales Office in Dublin; was the voice of British Airways
+conveying their excellence of standards internationally.
+She returned to India, and some years later, after becoming the proud mother of two lovely
+daughters, started a new career-
+this time in the field of education. Kalpana's professional life as an educationist is rich with diversity - she has taught a range of subjects from English, to Indian classics as world literature, to geography, to home science, to art and craft. Her students have ranged from children with special needs to those aspiring to do an MBA, from school children to air hostesses. She has worked with students from over thirty different nationalities in many different cities.
+She has taught in Dayanand Girls College... and in the American School.
+
+In whatever capacity she worked as a teacher -as a librarian- or as an administrative head, her vision has been singular - to instill a passion for excellence in young minds. The Rotary Club of Lucknow felicitated her for her excellence as an outstanding motivator and teacher in 2006.
+
+Public Speaking, Dramatics and cultural programmes have also been areas where she trained
+students and women.nShe herself has compeered numerous programs and events ranging from sports to culture to women's issues at various forums as well as on Door Darshan.
+Alongside her involvement with education, Kalpana has worked extensively for philanthropic causes - for village women at grass root levels in Bihar, primarily with literacy, family welfare and empowerment of women. The organization she ran, the Eastern Railway Women's Welfare Organisation (ERWWO) also worked with UNICEF to rehabilitate destitute children in Bihar.
+Her work in the field of upliftment of the girl child received further impetus through
+recognition from the State Government.
+
+The diversity in Kalpana's life has made her professional reach rich,
+varied and unique.
+What makes her successful?
+"Over time I learnt that if you have
+purpose, patience and positivity you can leave the rest to other people. And they usually don't disappoint."
+What motivated her to try such different fields - we ask.
+"Opportunity", she answers with humility." My family always came first".
+
+Today she lives with her husband and an 87 year old mother who
+has Alzheimers. She speaks everyday with her 2 daughters - one in Sydney and the other in London. And leads a 25 hour day.
+
+                </p>
+            </div>
+        </div>
+
+        <!-- Event 11 -->
+        <div class="event-container">
+            <button class="event-button" onclick="toggleEvent('event-details-11')">2002-2008 Showering love</button>
+            <div class="event-details" id="event-details-11">
+                 <span class="close-details" onclick="closeEvent('event-details-11')">&times;</span>
+                <p>
+                    Details about 2002-2008 Showering love:
+                    <!-- Add event-specific details here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Event 12 -->
+        <div class="event-container">
+            <button class="event-button" onclick="toggleEvent('event-details-12')">2020-now Being showered</button>
+            <div class="event-details" id="event-details-12">
+                  <span class="close-details" onclick="closeEvent('event-details-12')">&times;</span>
+                <p>
+                    Details about 2020-now Being showered:
+                    <!-- Add event-specific details here -->
+                </p>
+            </div>
+        </div>
+
+                <p
+           
+        <p>
+          
+          
+
+        </p>
+
+   
+this part is draft.... 2022 a painting sge made<br>
+            2021-a poem she wrote<br>
+            2021 a secret recipe - no lonfe a secret <br>
+            2021 someones life she touched<br></p>
+
+
+
+
+
+        </p>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+        </div>
+    </div>
+    </div>
+
+    <footer>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
+        </div>
+        <p>Contact</p>
+        <div class="footer-icons">
+            <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+          
+        <p>&copy; Copyright Kalpana Mathur. All rights reserved.</p>
+    </footer>
+
+
+        <script>
+           function toggleMenu() {
+        var menuContainer = document.getElementById('menuContainer');
+        var currentDisplay = window.getComputedStyle(menuContainer).display;
+
+        menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+    }
+
+    function closeMenu() {
+        var menuContainer = document.getElementById('menuContainer');
+        menuContainer.style.display = 'none';
+    }
+            var slideIndex = 0;
+            var manualSlideIndex = 0;
+
+            // Start the automatic slideshow at the top
+            showSlides();
+            // Start the automatic slideshow at the bottom
+            showSlidesManual();
+
+            function showSlides() {
+                var i;
+                var slides = document.querySelectorAll(".mySlides1");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+                slides[slideIndex - 1].style.display = "block";
+                setTimeout(showSlides, 7000); // Change slide every 7 seconds
+            }
+
+            function showSlidesManual() {
+                var slides = document.querySelectorAll(".mySlides");
+                for (var i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                manualSlideIndex++;
+                if (manualSlideIndex > slides.length) {
+                    manualSlideIndex = 1;
+                }
+                slides[manualSlideIndex - 1].style.display = "block";
+                setTimeout(showSlidesManual, 7000); // Change slide every 7 seconds
+            }
+
+            function plusSlides(n) {
+                slideIndex += n;
+                var slides = document.querySelectorAll(".mySlides1");
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+                if (slideIndex < 1) {
+                    slideIndex = slides.length;
+                }
+                for (var i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slides[slideIndex - 1].style.display = "block";
+            }
+
+            function plusSlidesGallery(n) {
+                manualSlideIndex += n;
+                var slides = document.querySelectorAll(".mySlides");
+                if (manualSlideIndex > slides.length) {
+                    manualSlideIndex = 1;
+                }
+                if (manualSlideIndex < 1) {
+                    manualSlideIndex = slides.length;
+                }
+                for (var i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slides[manualSlideIndex - 1].style.display = "block";
+            }
+
+      
+
+            var titleAudio; // Declare the audio variable globally
+
+            function playTitleAudio() {
+                if (!titleAudio) {
+                    titleAudio = new Audio('lindzay.m4a'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
+                    titleAudio.loop = false; // Set the audio to loop continuously
+                    titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
+                    titleAudio.play();
+                } else {
+                    if (!titleAudio.paused) {
+                        titleAudio.pause(); // Pause the audio if it's playing
+                    } else {
+                        titleAudio.play(); // Resume playing if it's paused
+                    }
+                }
+            }
+    // Close all event details on page load
+            document.addEventListener('DOMContentLoaded', function () {
+                closeAllEvents();
+            });
+
+            function toggleEvent(eventId) {
+                closeAllEvents(); // Close all events before opening the clicked one
+                var eventDetails = document.getElementById(eventId);
+                eventDetails.style.display = 'block';
+            }
+
+            function closeEvent(eventId) {
+                var eventDetails = document.getElementById(eventId);
+                eventDetails.style.display = 'none';
+            }
+
+            function closeAllEvents() {
+                var eventDetailsList = document.querySelectorAll('.event-details');
+                eventDetailsList.forEach(function (eventDetails) {
+                    eventDetails.style.display = 'none';
+                });
+            }
+        </script>
+
+</body>
+</html>
