@@ -3,6 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mummy's Comments</title>
+    <style>
+        /* Add your previous CSS styling here */
+
+        /* Example styling for comments container */
+        .comments-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <img src="icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
+    </div>
+
+    <div class="menu-container" id="menuContainer">
+        <!-- Your menu content here -->
+    </div>
+
+    <div class="page-container">
+        <h1>Mummy's Comments</h1>
+        <p class="header-description">Feel free to leave your comments below:</p>
+
+        <!-- Disqus comments container -->
+        <div class="comments-container">
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://shivanisart.github.io/mummy/Comments/comments.html'; // Replace with your page URL
+                    this.page.identifier = 'mummy-comments'; // Replace with a unique identifier for this page
+                };
+
+                (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://your-shortname.disqus.com/embed.js'; // Replace 'your-shortname' with your Disqus shortname
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+
+    <script>
+        // Your existing JavaScript code here
+    </script>
+</body>
+</html>!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Kalpana Mathur</title>
     <style>
