@@ -3,63 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mummy's Comments</title>
-    <style>
-        /* Add your previous CSS styling here */
+    <title>Comments</title>
 
-        /* Example styling for comments container */
-        .comments-container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    <!-- Add your styles for the background and menu icon here -->
+    <style>
+        body {
+            background-color: #4c4c4c;
+            color: white;
         }
+        /* Add more styles as needed */
+
+        /* Include your menu icon styles here */
     </style>
+
+    <!-- Add your menu icon script or stylesheets here -->
+
+    <!-- Add Disqus script here -->
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'https://shivanisart.github.io/mummy/Comments/comments.html';
+            this.page.identifier = 'mummy-comments';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://@disqus_rBtnhyfjJS.disqus.com/embed.js';  // Replace with your Disqus shortname
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
 </head>
 <body>
-    <div class="menu-icon" onclick="toggleMenu()">
-        <img src="icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
-    </div>
+    <!-- Your existing HTML content here -->
 
-    <div class="menu-container" id="menuContainer">
-        <!-- Your menu content here -->
-    </div>
+    <!-- Add a placeholder for Disqus comments -->
+    <div id="disqus_thread"></div>
 
-    <div class="page-container">
-        <h1>Mummy's Comments</h1>
-        <p class="header-description">Feel free to leave your comments below:</p>
-
-        <!-- Disqus comments container -->
-        <div class="comments-container">
-            <div id="disqus_thread"></div>
-            <script>
-                var disqus_config = function () {
-                    this.page.url = 'https://shivanisart.github.io/mummy/Comments/comments.html'; // Replace with your page URL
-                    this.page.identifier = 'mummy-comments'; // Replace with a unique identifier for this page
-                };
-
-                (function() {
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://your-shortname.disqus.com/embed.js'; // Replace 'your-shortname' with your Disqus shortname
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
-    </div>
-
-    <footer>
-        <!-- Your footer content here -->
-    </footer>
-
-    <script>
-        // Your existing JavaScript code here
-    </script>
+    <!-- Your existing script tags and closing body/html tags here -->
 </body>
 </html>
-
-            
       
