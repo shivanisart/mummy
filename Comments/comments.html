@@ -1,44 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comments</title>
-
-    <!-- Add your styles for the background and menu icon here -->
-    <style>
-        body {
-            background-color: #4c4c4c;
-            color: white;
-        }
-        /* Add more styles as needed */
-
-        /* Include your menu icon styles here */
-    </style>
-
-    <!-- Add your menu icon script or stylesheets here -->
-
-    <!-- Add Disqus script here -->
-    <script>
-        var disqus_config = function () {
-            this.page.url = 'https://shivanisart.github.io/mummy/Comments/comments.html';
-            this.page.identifier = 'mummy-comments';
-        };
-        (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://@disqus_rBtnhyfjJS.disqus.com/embed.js';  // Replace with your Disqus shortname
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-</head>
-<body>
-    <!-- Your existing HTML content here -->
-
-    <!-- Add a placeholder for Disqus comments -->
-    <div id="disqus_thread"></div>
-
-    <!-- Your existing script tags and closing body/html tags here -->
-</body>
-</html>
-      
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = '{{ page.url | absolute_url }}';
+        this.page.identifier = '{{ page.id }}';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://@disqus_rBtnhyfjJS.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
