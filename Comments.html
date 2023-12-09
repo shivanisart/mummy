@@ -1,13 +1,15 @@
+<!-- Include this where you want Disqus comments to appear on your page -->
 <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
-        this.page.url = '{{ page.url | absolute_url }}';
-        this.page.identifier = '{{ page.id }}';
+        this.page.url = 'https://shivanisart.github.io/mummy/Comments.html';
+        this.page.identifier = 'mummy_comments';
     };
     (function() {
         var d = document, s = d.createElement('script');
-        s.src = 'https://@disqus_rBtnhyfjJS.disqus.com/embed.js';
+        s.src = 'https://your-disqus-shortname.disqus.com/embed.js'; // Replace 'your-disqus-shortname' with your actual Disqus shortname
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
