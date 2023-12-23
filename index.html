@@ -489,6 +489,8 @@ and a memory of an experience first hand.
     <div class="slideshow-text-left">
         <!-- Event 1 -->
         <div class="event-container">
+           
+
             <button class="event-button" onclick="toggleEvent('event-details-1')">1944:The gun salute</button>
             <div class="event-details" id="event-details-1">
                 <span class="close-details" onclick="closeEvent('event-details-1')">&times;</span>
@@ -820,24 +822,24 @@ has Alzheimers. She speaks everyday with her 2 daughters - one in Sydney and the
             document.addEventListener('DOMContentLoaded', function () {
                 closeAllEvents();
             });
+        function toggleEvent(eventId) {
+    closeAllEvents(); // Close all events before opening the clicked one
+    var eventDetails = document.getElementById(eventId);
+    eventDetails.style.display = 'block';
+}
+        function closeAllEvents() {
+    var eventDetailsList = document.querySelectorAll('.event-details');
+    eventDetailsList.forEach(function (eventDetails) {
+        eventDetails.style.display = 'none';
+    });
+}
 
-            function toggleEvent(eventId) {
-                closeAllEvents(); // Close all events before opening the clicked one
-                var eventDetails = document.getElementById(eventId);
-                eventDetails.style.display = 'block';
-            }
+function closeEvent(eventId) {
+    var eventDetails = document.getElementById(eventId);
+    eventDetails.style.display = 'none';
+}
 
-            function closeEvent(eventId) {
-                var eventDetails = document.getElementById(eventId);
-                eventDetails.style.display = 'none';
-            }
 
-            function closeAllEvents() {
-                var eventDetailsList = document.querySelectorAll('.event-details');
-                eventDetailsList.forEach(function (eventDetails) {
-                    eventDetails.style.display = 'none';
-                });
-            }
         </script>
 
 </body>
