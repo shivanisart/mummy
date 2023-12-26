@@ -828,10 +828,11 @@ Happy 80th Birthday
         
         <!-- List of subheadings -->
         <ul class="subheadings">
-            <li class="subheading" onclick="showContent('cheenaRao')">Cheena Rao</li>
-            <li class="subheading" onclick="showContent('nirmalSharma')">Nirmal Sharma</li>
-            <li class="subheading" onclick="showContent('sanjayKalyani')">Sanjay Kalyani</li>
-            <li class="subheading" onclick="showContent('ishtiyaaq')">Ishtiyaaq</li>
+           
+            <li class="subheading" onclick="showContent('cheenaRao')" data-target="cheenaRao">Cheena Rao</li>
+            <li class="subheading" onclick="showContent('nirmalSharma')"data-target="nirmalSharma">Nirmal Sharma</li>
+            <li class="subheading" onclick="showContent('sanjayKalyani')"data-target="sanjayKalyani">Sanjay Kalyani</li>
+            <li class="subheading" onclick="showContent('ishtiyaaq')"data-target="ishtiyaaq">Ishtiyaaq</li>
         </ul>
         
         <!-- Content for each subheading -->
@@ -937,8 +938,48 @@ I recall the first time we met, played cards until the early hours and was so mu
         <p>&copy; Copyright Kalpana Mathur. All rights reserved.</p>
     </footer>
 
+<script>
+    function toggleEvent(eventId) {
+        closeAllEvents(); // Close all events before opening the clicked one
+        var eventDetails = document.getElementById(eventId);
+        eventDetails.style.display = 'block';
+    }
 
-        <script>
+    function closeAllEvents() {
+        var eventDetailsList = document.querySelectorAll('.event-details');
+        eventDetailsList.forEach(function (eventDetails) {
+            eventDetails.style.display = 'none';
+        });
+    }
+
+    function closeEvent(eventId) {
+        var eventDetails = document.getElementById(eventId);
+        eventDetails.style.display = 'none';
+    }
+
+    function showContent(contentId) {
+        var contents = document.querySelectorAll('.content');
+        contents.forEach(function (content) {
+            content.style.display = 'none';
+        });
+        document.getElementById(contentId).style.display = 'block';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const subheadings = document.querySelectorAll('.subheading');
+        const contents = document.querySelectorAll('.content');
+
+        subheadings.forEach(subheading => {
+            subheading.addEventListener('click', () => {
+                const target = subheading.getAttribute('data-target');
+                contents.forEach(content => {
+                    content.style.display = 'none';
+                });
+                document.getElementById(target).style.display = 'block';
+            });
+        });
+    });
+
            function toggleMenu() {
         var menuContainer = document.getElementById('menuContainer');
         var currentDisplay = window.getComputedStyle(menuContainer).display;
@@ -1033,41 +1074,7 @@ I recall the first time we met, played cards until the early hours and was so mu
                     }
                 }
             }
-    // Close all event details on page load
-            document.addEventListener('DOMContentLoaded', function () {
-                closeAllEvents();
-            });
-        function toggleEvent(eventId) {
-    closeAllEvents(); // Close all events before opening the clicked one
-    var eventDetails = document.getElementById(eventId);
-    eventDetails.style.display = 'block';
-}
-        function closeAllEvents() {
-    var eventDetailsList = document.querySelectorAll('.event-details');
-    eventDetailsList.forEach(function (eventDetails) {
-        eventDetails.style.display = 'none';
-    });
-}
-
-function closeEvent(eventId) {
-    var eventDetails = document.getElementById(eventId);
-    eventDetails.style.display = 'none';
-}
-              document.addEventListener('DOMContentLoaded', function () {
-        const subheadings = document.querySelectorAll('.subheading');
-        const contents = document.querySelectorAll('.content');
-
-        subheadings.forEach(subheading => {
-            subheading.addEventListener('click', () => {
-                const target = subheading.getAttribute('data-target');
-                contents.forEach(content => {
-                    content.style.display = 'none';
-                });
-                document.getElementById(`content-${target}`).style.display = 'block';
-            });
-        });
-    });
-
+ 
         </script>
 
 </body>
