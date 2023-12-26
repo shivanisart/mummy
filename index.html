@@ -369,7 +369,9 @@
         cursor: pointer;
         padding: 0;
         margin: 0;
-    }
+        text-align: left; /* Add this line to align the text to the left */
+}
+
 
     .close-details {
         color: #929292;
@@ -514,6 +516,7 @@ and a memory of an experience first hand.
          <div class="life-story-section">
         <h2>Kalpana's Life Story</h2>
         <!-- Event 1 -->
+             
         <div class="event-container">
            
 
@@ -817,21 +820,23 @@ Happy 80th Birthday
             </div>
         </div>
 
-         <!-- Event 20 -->
+                <!-- Event 20 -->
 <div class="event-container">
-    <button class="event-button" onclick="toggleEvent('event-details-20')">The Railway Family</button>
+    <button class="event-button" onclick="toggleEvent('event-details-20')">The railway family</button>
     <div class="event-details" id="event-details-20">
         <span class="close-details" onclick="closeEvent('event-details-20')">&times;</span>
-
-        <div class="subheadings">
-            <h3 class="subheading" data-target="cheena">Cheena Rao</h3>
-            <h3 class="subheading" data-target="nirmal">Nirmal Sharma</h3>
-            <h3 class="subheading" data-target="sanjay">Sanjay and Kalyani</h3>
-            <h3 class="subheading" data-target="ishtiyaaq">Ishtiyaaq</h3>
-        </div>
-
-        <div class="content" id="content-cheena">
-<img src="cheena1.JPG" alt="Cheena Rao Image">
+        
+        <!-- List of subheadings -->
+        <ul class="subheadings">
+            <li class="subheading" onclick="showContent('cheenaRao')">Cheena Rao</li>
+            <li class="subheading" onclick="showContent('nirmalSharma')">Nirmal Sharma</li>
+            <li class="subheading" onclick="showContent('sanjayKalyani')">Sanjay Kalyani</li>
+            <li class="subheading" onclick="showContent('ishtiyaaq')">Ishtiyaaq</li>
+        </ul>
+        
+        <!-- Content for each subheading -->
+        <div class="content" id="cheenaRao">
+          <img src="cheena1.JPG" alt="Cheena Rao Image">
                
                 <p>
                    Cheena Rao
@@ -863,8 +868,21 @@ In the hearts gallery, side by side,
 A friendship embraces, pure and true,
 A timeless tale for me and you.
                 </p>
-            </div>
         </div>
+        
+        <div class="content" id="nirmalSharma">
+            <!-- Content for Nirmal Sharma goes here -->
+        </div>
+        <div class="content" id="sanjayKalyani">
+            <!-- Content for Sanjay Kalyani goes here -->
+        </div>
+        <div class="content" id="ishtiyaaq">
+            <!-- Content for Ishtiyaaq goes here -->
+        </div>
+    </div>
+</div>
+
+
 
         <!-- Event 21 -->
         <div class="event-container">
