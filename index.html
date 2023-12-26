@@ -377,6 +377,21 @@
         cursor: pointer;
     }
 
+    .subheadings {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.subheading {
+    cursor: pointer;
+}
+
+.content {
+    display: none;
+}
+
+
 
 
     </style>
@@ -795,11 +810,22 @@ Happy 80th Birthday
             </div>
         </div>
 
-        <!-- Event 20 -->
-        <div class="event-container">
-            <button class="event-button" onclick="toggleEvent('event-details-20')">The railway family </button>
-            <div class="event-details" id="event-details-20">
-                <span class="close-details" onclick="closeEvent('event-details-20')">&times;</span>
+         <!-- Event 20 -->
+<div class="event-container">
+    <button class="event-button" onclick="toggleEvent('event-details-20')">The Railway Family</button>
+    <div class="event-details" id="event-details-20">
+        <span class="close-details" onclick="closeEvent('event-details-20')">&times;</span>
+
+        <div class="subheadings">
+            <h3 class="subheading" data-target="cheena">Cheena Rao</h3>
+            <h3 class="subheading" data-target="nirmal">Nirmal Sharma</h3>
+            <h3 class="subheading" data-target="sanjay">Sanjay and Kalyani</h3>
+            <h3 class="subheading" data-target="ishtiyaaq">Ishtiyaaq</h3>
+        </div>
+
+        <div class="content" id="content-cheena">
+<img src="cheena1.jpg" alt="Cheena Rao Image">
+               
                 <p>
                    Cheena Rao
                     Dear Mrs. Mathur,
@@ -1002,7 +1028,20 @@ function closeEvent(eventId) {
     var eventDetails = document.getElementById(eventId);
     eventDetails.style.display = 'none';
 }
+              document.addEventListener('DOMContentLoaded', function () {
+        const subheadings = document.querySelectorAll('.subheading');
+        const contents = document.querySelectorAll('.content');
 
+        subheadings.forEach(subheading => {
+            subheading.addEventListener('click', () => {
+                const target = subheading.getAttribute('data-target');
+                contents.forEach(content => {
+                    content.style.display = 'none';
+                });
+                document.getElementById(`content-${target}`).style.display = 'block';
+            });
+        });
+    });
 
         </script>
 
