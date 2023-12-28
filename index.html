@@ -396,6 +396,13 @@
     color: white; /* Set the text color for content */
 }
 
+    
+    .event-image {
+        max-width: 100%; /* Ensure images don't exceed their natural size */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Remove extra space below images */
+        margin: 10px 0; /* Add margin for spacing */
+    }
 
 
     </style>
@@ -515,135 +522,115 @@ and a memory of an experience first hand.
   <div class="slideshow-text-center">
     <div class="slideshow-text-left">
 
-         <div class="life-story-section">
-        <h2>Kalpana's Life through the eyes her family</h2>
+<div class="life-story-section">
+    <h2>Kalpana's Life through the eyes of her family</h2>
+    <p>
+        Family, for Kalpana, is not just those who share her gene pool. It is her students, her friends, and everyone who shares a meal, a moment in time, or her vision.
+    </p>
+
+    <!-- Event 1 -->
+    <div class="event-container">
+        <button class="event-button" onclick="toggleEvent('event-details-1')">1944: The gun salute</button>
+        <div class="event-details" id="event-details-1">
+            <span class="close-details" onclick="closeEvent('event-details-1')">&times;</span>
+
+            <!-- List of subheadings -->
+            <ul class="subheadings">
+                <li class="subheading" onclick="showContent('chacha')" data-target="chacha">Atul Gaur remembers</li>
+                <li class="subheading" onclick="showContent('letter')" data-target="letter">The letter</li>
+            </ul>
+
+            <!-- Content for each subheading -->
+            <div class="content" id="chacha">
+                <div class="image-wrapper">
+                    <img src="letter.JPG" alt="Letter Image">
+                    <img src="chacha.JPG" alt="Chacha Image">
+                </div>
                 <p>
-                    Family, for Kalpana, is not just thode who share her gene pool. It is her students, her friends, and everyone who shares a meal, a momentin time, or her vision.
-              </p>
-        <!-- Event 1 -->
-             
-        <div class="event-container">
-    <button class="event-button" onclick="toggleEvent('event-details-1')">1944: The gun salute</button>
-    <div class="event-details" id="event-details-1">
-        <span class="close-details" onclick="closeEvent('event-details-1')">&times;</span>
-        
-        <!-- List of subheadings -->
-        <ul class="subheadings">
-           
-            <li class="subheading" onclick="showContent('chacha')" data-target="chacha">Atul Gaur remembers</li>
-            <li class="subheading" onclick="showContent('letter')"data-target="letter">The letter</li>
-          
-        </ul>
-        
-        <!-- Content for each subheading -->
-        <div class="content" id="chacha">
-          <img src="letter.JPG" alt="letter  Image"
-<img src="chacha.JPG" alt="Chacha Image">
-                <p>
-              
-I have some faint memories of MIMMI when she was born in Gwalior. I was hardly 4 n a half years old. I remember the moment news came my father ( her grandfather) took out his double barrel gun and fired a few shots in the Angan. This was followed by sweets distribution in the entire neighbourhood. Though I don’t have any pictures of her birth to share with you, I recall that when she was around four, we used to play and she had a white blouse and a red/ blackened skirt.<br> She was the dearest to my parents. Even at that age she was a foodie and she loved sweets. A fantastic kid, loved by one n all. 
-<br>Need not to say she has always been dearest to me. My faviourite niece. <br>Atul Gaur aka Chacha (age 85)
-                     <img src="letter.jpg" alt="Gun Salute Letter">
-                    <img src="letter.jpg" alt="Gun Salute Letter">
-                    
+                    I have some faint memories of MIMMI when she was born in Gwalior. I was hardly 4 and a half years old. I remember the moment news came; my father (her grandfather) took out his double barrel gun and fired a few shots in the Angan. This was followed by sweets distribution in the entire neighborhood. Though I don’t have any pictures of her birth to share with you, I recall that when she was around four, we used to play, and she had a white blouse and a red/blackened skirt. She was the dearest to my parents. Even at that age, she was a foodie and she loved sweets. A fantastic kid, loved by one and all. Need not to say she has always been dearest to me. My favorite niece. Atul Gaur aka Chacha (age 85)
                 </p>
-             <span class="close-details" onclick="closeEvent('event-details-1')">&times;</span>
             </div>
         </div>
+    </div>
 
-<!-- Event 2 -->
-<div class="event-container">
-    <button class="event-button" onclick="toggleEvent('event-details-2')">1954 Ramnee days</button>
-    <div class="event-details" id="event-details-2">
-        <span class="close-details" onclick="closeEvent('event-details-2')">&times;</span>
+    <!-- Event 2 -->
+    <div class="event-container">
+        <button class="event-button" onclick="toggleEvent('event-details-2')">1954 Ramnee days</button>
+        <div class="event-details" id="event-details-2">
+            <span class="close-details" onclick="closeEvent('event-details-2')">&times;</span>
 
-        <!-- Main content for the event -->
-       
+            <!-- Main content for the event -->
             <p>
                 In 1957, Kalpana went to Ramnee, a boarding school in Nainital. She loved the fresh mountain air, good food, and a disciplined and simple existence. In 2017, on a visit to London, Kalpana reconnected with Kobrat - one of her closest friends in Ramnee. Read more of Kobrat's memories.
                 <!-- Add event-specific details here -->
             </p>
-        </div>
 
-        <!-- List of subheadings -->
-        <ul class="subheadings">
-            <li class="subheading" onclick="showContent('kobrat')" data-target="kobrat">Kobrat remembers</li><br>
-        </ul>
+            <!-- List of subheadings -->
+            <ul class="subheadings">
+                <li class="subheading" onclick="showContent('kobrat')" data-target="kobrat">Kobrat remembers</li>
+            </ul>
 
-        <!-- Subheading content -->
-        <div class="content" id="kobrat">
-            <p>
-                xxxxxxx
-            </p>
-        </div>
-    </div>
-</div>
-             </div>
-
-
- <!-- Event 3 -->
-<div class="event-container">
-    <button class="event-button" onclick="toggleEvent('event-details-3')">1963 London with BOAC</button>
-    <div class="event-details" id="event-details-3">
-        <span class="close-details" onclick="closeEvent('event-details-3')">&times;</span>
-
-      
-            <p>
-                In 1964, Kalpana joined British Airways, then BOAC and soon became the face of BOAC for the opening of their Dublin office. Below is a clip of the evening news...
-        </div>
-
-        <!-- List of subheadings -->
-        <ul class="subheadings">
-            <li class="subheading" onclick="showContent('boac')" data-target="boac">The face of BOACs</li><br>
-            <li class="subheading" onclick="showContent('dhun')" data-target="dhun">Dhun Ward narrates</li><br>
-        </ul>
-
-        <!-- Content for each subheading -->
- 
-        <div class="content" id="boac">
-          <img src="event3dublin1965.jpg" alt="BOAC Event Image">
-          <img src="event3clip.jpg" alt="BOAC Event Clip Image">
-
-        </div>
-
-        <div class="content" id="dhun">
-            <p>
-                Kalpana has been, for me, the role model of a friend/wife/mother - you name it, she is the most all-round accomplished and unassuming person I know. Good looking. Good cook good at everything she attempted.
-                In college, Kalpana, Manjari, and myself were kinda like the three witches of Macbeth - we were always quoting "when shall we three meet again. In thunder, lightning, or rain...
-                In her airline job, she was a star as well - I have recollection of her doing a photoshoot for some publication/advertisement for the airline.
-            </p>
-        </div>
-    </div>
-</div>
-
-
-        <!-- Event 4 -->
-        <div class="event-container">
-            <button class="event-button" onclick="toggleEvent('event-details-4')">1965 The love story</button>
-            <div class="event-details" id="event-details-4">
-                <span class="close-details" onclick="closeEvent('event-details-4')">&times;</span>
+            <!-- Subheading content -->
+            <div class="content" id="kobrat">
                 <p>
-                    
-
-Chand is Kalpana's nephew twice over.His father is Kalpanas cousin. His mother is Anand's sister. Chand recounts the love story. <br>
-                    
-                    
-                
-            
-   
-    
-                    Kalpana Mami Tribute 
-Kalpana mami was the epitome of beauty & grace . 
-Recall meeting her in Mumbai in the 60’s when she was an air hostess at BOAC ( the forerunner of British Airways ) . As kids we used to look forward to visits from our glamorous bhua . Unsurprisingly our dashing Anand Mama was smitten by her and battled the Mathur fixation to marry Kalpana Gaur . I suspect Yashbir bhaiya strongly batted for his sister much to the annoyance of his ma-in-law . 
-As it turns out Anand & Kalpana won the ITC Wills Made For Each Other Couple contest …. this was around the time I joined ITC and it was truly a brag moment for me . 
-Kalpana Mami - Here’s wishing you a grand 80th birthday. May you enjoy good health and happiness always. 
-Love & good wishes 
-Chand
-            
+                    xxxxxxx
                 </p>
-                
             </div>
         </div>
+    </div>
+
+    <!-- Event 3 -->
+    <div class="event-container">
+        <button class="event-button" onclick="toggleEvent('event-details-3')">1963 London with BOAC</button>
+        <div class="event-details" id="event-details-3">
+            <span class="close-details" onclick="closeEvent('event-details-3')">&times;</span>
+
+            <!-- Main content for the event -->
+            <p>
+                In 1964, Kalpana joined British Airways, then BOAC, and soon became the face of BOAC for the opening of their Dublin office. Below is a clip of the evening news...
+            </p>
+
+            <!-- List of subheadings -->
+            <ul class="subheadings">
+                <li class="subheading" onclick="showContent('boac')" data-target="boac">The face of BOACs</li>
+                <li class="subheading" onclick="showContent('dhun')" data-target="dhun">Dhun Ward narrates</li>
+            </ul>
+
+            <!-- Content for each subheading -->
+            <div class="content" id="boac">
+                <div class="image-wrapper">
+                    <img src="event3dublin1965.jpg" alt="BOAC Event Image">
+                    <img src="event3clip.jpg" alt="BOAC Event Clip Image">
+                </div>
+                <p>
+                    xxxxxxx
+                </p>
+            </div>
+
+            <div class="content" id="dhun">
+                <p>
+                    Kalpana has been, for me, the role model of a friend/wife/mother - you name it, she is the most all-round accomplished and unassuming person I know. Good looking. Good cook good at everything she attempted. In college, Kalpana, Manjari, and myself were kinda like the three witches of Macbeth - we were always quoting "when shall we three meet again. In thunder, lightning, or rain... In her airline job, she was a star as well - I have recollection of her doing a photoshoot for some publication/advertisement for the airline.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event 4 -->
+    <div class="event-container">
+        <button class="event-button" onclick="toggleEvent('event-details-4')">1965 The love story</button>
+        <div class="event-details" id="event-details-4">
+            <span class="close-details" onclick="closeEvent('event-details-4')">&times;</span>
+            <p>
+                Chand is Kalpana's nephew twice over. His father is Kalpana's cousin. His mother is Anand's sister. Chand recounts the love story.
+            </p>
+            <div class="content" id="chand-love-story">
+                <p>
+                    Kalpana Mami was the epitome of beauty & grace. Recall meeting her in Mumbai in the '60s when she was an air hostess at BOAC (the forerunner of British Airways). As kids, we used to look forward to visits from our glamorous bhua. Unsurprisingly our dashing Anand Mama was smitten by her and battled the Mathur fixation to marry Kalpana Gaur. I suspect Yashbir bhaiya strongly batted for his sister much to the annoyance of his ma-in-law. As it turns out Anand & Kalpana won the ITC Wills Made For Each Other Couple contest; this was around the time I joined ITC and it was truly a brag moment for me. Kalpana Mami - Here’s wishing you a grand 80th birthday. May you enjoy good health and happiness always. Love & good wishes, Chand
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
         <!-- Event 5 -->
         <div class="event-container">
