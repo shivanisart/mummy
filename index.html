@@ -997,18 +997,11 @@ I recall the first time we met, played cards until the early hours and was so mu
     </footer>
 
 <script>
-    function toggleEvent(eventId) {
-        closeAllEvents(); // Close all events before opening the clicked one
-        var eventDetails = document.getElementById(eventId);
-        eventDetails.style.display = 'block';
-    }
-
-    function closeAllEvents() {
-        var eventDetailsList = document.querySelectorAll('.event-details');
-        eventDetailsList.forEach(function (eventDetails) {
-            eventDetails.style.display = 'none';
-        });
-    }
+  
+   function toggleEvent(eventId) {
+    var eventDetails = document.getElementById(eventId);
+    eventDetails.style.display = 'block';
+}
 
     function closeEvent(eventId) {
         var eventDetails = document.getElementById(eventId);
