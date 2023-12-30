@@ -153,50 +153,7 @@
             color: #07BFF;
         }
 
-        /* Style the video container */
-        .video-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-        }
 
-        /* Style the video captions (toggle button) */
-        .video-caption {
-            font-size: 24px;
-            margin-bottom: 10px;
-            text-align: center;
-            cursor: pointer;
-            background-color: #4c4c4c;
-            color: #929292;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        /* Style the video descriptions (hidden by default) */
-        .video-description {
-            display: none;
-            font-size: 24px;
-            text-align: left;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        }
-        /* Style the video posters (thumbnails) */
-        /* Style the video posters (thumbnails) */
-        .video-item video {
-            width: 100%; /* Set the video width to 100% */
-            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
-            object-fit: cover; /* Ensure the video covers the entire container */
-          }
-
-          .video-item video::poster {
-            width: 100%; /* Set the video width to 100% */
-            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
-            object-fit: cover; /* Ensure the video covers the entire container */
-
-      }
       /* Center the header content */
           .header-content {
             text-align: center;
@@ -225,6 +182,7 @@
               justify-content: space-between;
               max-width: 800px;
               margin: 0 auto;
+              height: 800px;
           }
           /* Center-align the text box */
           .slideshow-text-center {
@@ -237,11 +195,6 @@
               display: inline-block; /* Ensure inline block for left alignment */
               text-align: left; /* Left-align the text inside the box */
           }
-
-
-
-
-
 
      .slideshow-container {
     max-width: 800px;
@@ -288,18 +241,6 @@
     }
 
 
-    /* Style for captions */
-    .caption {
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 100%;
-      background-color:#4c4c4c;
-      color: #929292;
-      text-align: center;
-      padding: 10px;
-    }
-
     /* Style for prev/next buttons */
     .prev, .next {
       position: absolute;
@@ -320,17 +261,16 @@
 
     /* Style for the captions (initially hidden) */
     .mySlides1 .caption {
-
-        position: absolute;
-        background-color: #4c4c4c;
-        color: #929292;
-        padding: 5px;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        transition: 0.2s;
-    }
+      position: absolute;
+      background-color: #4c4c4c;
+      color: #929292;
+      padding: 5px;
+      bottom: 0; /* Adjusted value to align with the bottom of the slide */
+      left: 0;
+      width: 100%;
+      text-align: center;
+      transition: 0.2s;
+  }
 
     /* Show captions on hover */
     .mySlides1:hover .caption {
