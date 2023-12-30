@@ -265,22 +265,38 @@
     .mySlides1:hover .caption {
         display: block;
     }
+            /* Adjust the CSS for the image wrapper */
+.image-wrapper {
+    max-width: 100%; /* Ensure images don't exceed their natural size */
+    height: auto; /* Allow images to scale proportionally */
+    display: flex; /* Use flexbox to align images horizontally */
+    justify-content: center; /* Center-align images */
+    align-items: center; /* Center-align images */
+    flex-wrap: wrap; /* Allow images to wrap to the next line on smaller screens */
+    margin: 10px 0; /* Add margin for spacing */
+}
 
-         .event-details {
-        display: none;
-        background-color: #4c4c4c; /* Set the background color to match your design */
-        color: white; /* Set the text color */
-        font-size: 24px;
-        padding: 10px;
-        margin-top: 10px;
-        border-radius: 5px;
-    }
-        .image-wrapper
-        max-width: 100%; /* Ensure images don't exceed their natural size */
-        height: 400px; /* Maintain aspect ratio */
-        display: block; /* Remove extra space below images */
-        margin: 10px 0; /* Add margin for spacing */
-    }
+/* Adjust the CSS for individual images */
+.image-wrapper img {
+    max-width: 100%; /* Ensure images don't exceed their natural size */
+    height: auto; /* Allow images to scale proportionally */
+    margin: 5px; /* Add margin between images */
+}
+
+
+/* Adjust the CSS for event details to add padding */
+.event-details {
+    padding: 20px; /* Add padding to the event details for better spacing */
+    box-sizing: border-box; /* Include padding in the total width/height */
+}
+
+/* Adjust the CSS for the content within the event details */
+.event-details p {
+    margin-bottom: 10px; /* Add margin at the bottom of each paragraph for spacing */
+}
+
+
+
             
 
     .event-button {
