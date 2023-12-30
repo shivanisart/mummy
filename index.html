@@ -275,6 +275,13 @@
         margin-top: 10px;
         border-radius: 5px;
     }
+        .image-wrapper
+        max-width: 100%; /* Ensure images don't exceed their natural size */
+        height: 400px; /* Maintain aspect ratio */
+        display: block; /* Remove extra space below images */
+        margin: 10px 0; /* Add margin for spacing */
+    }
+            
 
     .event-button {
         background-color: transparent;
@@ -369,84 +376,87 @@ and a memory of an experience first hand.
         </div>
 
 
-          <!-- Slide 3 -->
+          <!-- Slide 2 -->
           <div class="mySlides1 fade">
-              <img src="50anniv.jpg" alt="Slide 3">
+              <img src="50anniv.jpg" alt="Slide 2">
               <div class="caption"> Mrs Mathur was like us: young at heart.</div>
           </div>
 
 
-            <!-- Slide 2 -->
+            <!-- Slide 3 -->
               <div class="mySlides1 fade">
-                  <img src="Sari.jpg" alt="Slide 2">
+                  <img src="Sari.jpg" alt="Slide 3">
                   <div class="caption">She had a fantastic sari collection!</div>
             </div>
 
 
 
-          <!-- Slide 5 -->
+          <!-- Slide 4 -->
           <div class="mySlides1 fade">
-              <img src="mummyalone.jpg" alt="Slide 5">
+              <img src="mummyalone.jpg" alt="Slide 4">
               <div class="caption">I was totally in awe of her elegance and style. </div>
           </div>
 
-          <!-- Slide 6 -->
+          <!-- Slide 5 -->
           <div class="mySlides1 fade">
-              <img src="Warmeyes.jpg" alt="Slide 6">
+              <img src="Warmeyes.jpg" alt="Slide 5">
               <div class="caption"> She has such Warm eyes. </div>
           </div>
 
-
-            <!-- Slide 7 -->
+        
+                <!-- Slide 6 -->
             <div class="mySlides1 fade">
-                <img src="/family/still.jpg" alt="Slide 7">
-                <div class="caption"> Still looks so lovely at eighty</div>
+                <img src="./family/cornwall.jpg.jpg" alt="Slide 6">
+                <div class="caption"> I was with ITC when Kalpana Mami and Anand Mama won the "Made for each other" award. A proud moment.</div>
+            </div>
+                <!-- Slide 7 -->
+            <div class="mySlides1 fade">
+                <img src="elegant.jpg" alt="Slide 7">
+                <div class="caption"> I was such a big fan of Mrs. Mathur. Her looks, kajal lined eyes, absolutely slick bun, and her deep voice, the way she explained HS concepts, it was so very fantastic....she was way ahead of everyone. </div>
             </div>
 
-            <!-- Slide 4 -->
+               <!-- Slide 8 -->
             <div class="mySlides1 fade">
-                <img src="Graceful.jpg" alt="Slide 4">
+                <img src="Graceful.jpg" alt="Slide 8">
                 <div class="caption"> Each day she looks more elegant and graceful </div>
             </div>
 
-            <!-- Slide 8 -->
+
+            <!-- Slide 9 -->
             <div class="mySlides1 fade">
-                <img src="elegant.jpg" alt="Slide 8">
-                <div class="caption"> I was such a big fan of Mrs. Mathur. Her looks, kajal lined eyes, absolutely slick bun, and her deep voice, the way she explained HS concepts, it was so very fantastic....she was way ahead of everyone. </div>
+                <img src="/family/still.jpg" alt="Slide 9">
+                <div class="caption"> Still looks so lovely at eighty</div>
             </div>
-                <!-- Slide 9 -->
-            <div class="mySlides1 fade">
-                <img src="./family/cornwall.jpg.jpg" alt="Slide 8">
-                <div class="caption"> I was with ITC when Kalpana Mami and Anand Mama won the "Made for each other" award. A proud moment.</div>
-            </div>
+
+     
                 <!-- Slide 10 -->
             <div class="mySlides1 fade">
-                <img src="./family/cherryblossom.jpg.jpg" alt="Slide 8">
+                <img src="./family/cherryblossom.jpg.jpg" alt="Slide 10">
                 <div class="caption"> I remember the flower arrangements in little vases all over her home. It smelled fantastic. </div>
             </div>
          <!-- Slide 11 -->
             <div class="mySlides1 fade">
-                <img src="./family/Wow .jpg" alt="Slide 8">
+                <img src="./family/Wow .jpg" alt="Slide 11">
                 <div class="caption"> My mum - just wow! </div>
             </div>
                 <!-- Slide 12 -->
             <div class="mySlides1 fade">
-                <img src="4girls.jpg" alt="Slide 8">
+                <img src="4girls.jpg" alt="Slide 12">
                 <div class="caption">We all look like her.... nearly!</div>
             </div>
                 <!-- Slide 13 -->
             <div class="mySlides1 fade">
-                <img src="./family/light.jpg" alt="Slide 8">
+                <img src="./family/light.jpg" alt="Slide 13">
                 <div class="caption"> She has an energy that lights up the room.</div>
             </div>
         <!-- Slide 14 -->
             <div class="mySlides1 fade">
-                <img src="./family/umalliru.jpg.jpg" alt="Slide 8">
+                <img src="./family/umalliru.jpg.jpg" alt="Slide 14">
                 <div class="caption"> Mimi is a foodie </div>
             </div>
                 <!-- Slide 15 -->
             <div class="mySlides1 fade">
-                <img src="./family/drink.jpg.jpg" alt="Slide 8">
+                <img src="./family/drink.jpg.jpg" alt="Slide 15">
                 <div class="caption"> She could outdrink the boys! </div>
             </div>
         <!-- Add more slides as needed -->
@@ -472,14 +482,15 @@ and a memory of an experience first hand.
           <button class="event-button" onclick="toggleEvent('event-details-1')">1944: The gun salute</button>
           <div class="event-details" id="event-details-1">
               <span class="close-details" onclick="closeEvent('event-details-1')">&times;</span>
-
+               <p>
+                  Kalpana was born on 13th April 1944 in Gwalior, the eldest of three daughters of Kanti Devi and Prabodh Gaur.
+              </p>
               <div class="image-wrapper">
+                
                   <img src="letter.JPG" alt="Letter Image">
                   <img src="chacha.JPG" alt="Chacha Image">
               </div>
-              <p>
-                  Kalpana was born on 13th April 1944 in Gwalior, the eldest of three daughters of Kanti Devi and Prabodh Gaur.
-              </p>
+             
               <p>
                   Atul Gaur, aka Chacha, recalls the moment when news of Kalpana's birth arrived, marked by a gun salute and celebrations in the neighborhood.
             <br> I have some faint memories of MIMMI when she was born in Gwalior. I was hardly 4 and a half years old. I remember the moment news came; my father (her grandfather) took out his double barrel gun and fired a few shots in the Angan. This was followed by distribution of sweets in the entire neighborhood. Though I don’t have any pictures of her birth to share with you, I recall that when she was around four, we used to play, and she had a white blouse and a red/blackened skirt. She was the dearest to my parents. Even at that age, she was a foodie and she loved sweets. She was a fantastic kid, loved by one and all. Need not to say she has always been dearest to me. My favorite niece.
@@ -511,7 +522,9 @@ and a memory of an experience first hand.
               <p>
                   In 1964, Kalpana joined British Airways, then BOAC, and soon became the face of BOAC for the opening of their Dublin office. Below is a clip of the evening news...
               </p>
-
+      <div class="image-wrapper">
+                
+             
                       <img src="event3dublin1965.jpg" alt="BOAC Event Image">
                       <img src="event3clip.jpg" alt="BOAC Event Clip Image">
                   </div>
