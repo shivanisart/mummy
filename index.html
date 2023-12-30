@@ -173,17 +173,6 @@
           }
 
 
-
-
-          /* Style the gallery container with Flexbox */
-          .gallery-container {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: space-between;
-              max-width: 800px;
-              margin: 0 auto;
-              height: 800px;
-          }
           /* Center-align the text box */
           .slideshow-text-center {
               text-align: center;
@@ -229,15 +218,15 @@
       border-radius: 3px 0 0 3px;
     }
 
-    /* Style for individual slides */
     .mySlides1 {
-      display: none;
+        display: none;
+        height: 400px; /* Set your desired fixed height */
     }
 
-    /* Style for slide images */
     .mySlides1 img {
-      width: 100%;
-      height: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Maintain aspect ratio and cover the container */
     }
 
 
