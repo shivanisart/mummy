@@ -305,7 +305,11 @@
     border-radius: 5px;
     box-sizing: border-box; /* Include padding in the total width/height */
 }
-
+.event-button {
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Show ellipsis for overflow text */
+}
 
 /* Adjust the CSS for the content within the event details */
 .event-details p {
