@@ -262,16 +262,13 @@
   transition: background-color 0.3s;
 }
 
-/* Adjust the left property for the .prev button */
+/* Center the buttons horizontally */
 .prev {
-  left: 20%; /* Adjust if needed to move the button to the desired position */
-  margin-left: -50px; /* Half the total width of the button for precise alignment */
+  left: calc(50% - 60px); /* Adjust based on your button width */
 }
 
-/* Adjust the right property for the .next button */
 .next {
-  right: 20%; /* Adjust if needed to move the button to the desired position */
-  margin-right: -50px; /* Half the total width of the button for precise alignment */
+  left: calc(50% + 20px); /* Adjust based on your button width */
 }
 
     .prev:hover, .next:hover {
