@@ -38,8 +38,8 @@
 .slideshow-container, .event-container {
     margin: 0 auto; /* This centers the content if necessary, might be redundant */
     padding: 0 20px; /* This ensures spacing from the edges */
-    margin-bottom: 20px; /* Adjust the value as needed */
-    box-sizing: border-box; /* Ensure padding does not expand the box */
+      margin-bottom: 20px; /* Adjust the value as needed */
+     box-sizing: border-box; /* Ensure padding does not expand the box */
 }
     
 
@@ -248,19 +248,31 @@
     }
 
 
-    /* Style for prev/next buttons */
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 36px;
-      font-weight: bold;
-      cursor: pointer;
-      padding: 10px;
-      background-color: #4c4c4c;
-      color: white;
-      transition: background-color 0.3s;
-    }
+  /* Style for prev/next buttons */
+.prev, .next {
+  position: absolute;
+  bottom: 10px; /* Position at the bottom of the container */
+  transform: translateX(-50%); /* Center the buttons horizontally */
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #4c4c4c;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+/* Adjust the left property for the .prev button */
+.prev {
+  left: 50%; /* Adjust if needed to move the button to the desired position */
+  margin-left: -50px; /* Half the total width of the button for precise alignment */
+}
+
+/* Adjust the right property for the .next button */
+.next {
+  right: 50%; /* Adjust if needed to move the button to the desired position */
+  margin-right: -50px; /* Half the total width of the button for precise alignment */
+}
 
     .prev:hover, .next:hover {
       background-color: #4c4c4c;
