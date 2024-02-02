@@ -27,11 +27,21 @@
 
 
         /* Apply max-width to the page container */
-        .page-container {
-            max-width: 800px;
-            margin: 0 auto; /* To center the content horizontally */
-            padding: 0 20px; /* Add padding to create spacing from the edges */
-        }
+.page-container {
+    max-width: 800px;
+    margin: 0 auto; /* To center the content horizontally */
+    padding: 0 20px; /* Add padding to create spacing from the edges */
+    box-sizing: border-box; /* Ensure padding does not expand the box */
+}
+
+/* Styles for slideshow and event containers */
+.slideshow-container, .event-container {
+    margin: 0 auto; /* This centers the content if necessary, might be redundant */
+    padding: 0 20px; /* This ensures spacing from the edges */
+       margin-bottom: 20px;
+    box-sizing: border-box; /* Ensure padding does not expand the box */
+}
+    
 
 
         /* Ensure that the menu icon is visible at smaller screen sizes */
@@ -189,11 +199,7 @@
               display: inline-block; /* Ensure inline block for left alignment */
               text-align: left; /* Left-align the text inside the box */
           }
-    .event-container {
-    max-width: 100%; /* Set max-width to 100% for responsiveness */
-    margin: 0 auto;
-    padding: 0 20px;
-}
+
 
 /* Adjust the CSS for individual sections if needed */
 .header {
@@ -207,14 +213,7 @@
     text-align: center;
     padding: 10px;
 }
-    /* Set a consistent width for slideshow and event container */
-.slideshow-container,
-.event-container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
+    
 /* Other existing CSS styles... */
 
 /* Adjust the CSS for individual sections if needed */
