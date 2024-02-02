@@ -281,25 +281,22 @@
     .prev:hover, .next:hover {
       background-color: #4c4c4c;
     }
+.mySlides1 {
+    position: relative; /* Ensure this container is positioned to allow more controlled positioning within it */
+    /* Other styles for .mySlides1 */
+}
 
-    /* Style for the captions (initially hidden) */
-    .mySlides1 .caption {
-      position: absolute;
-      background-color: #4c4c4c;
-      color: #929292;
-      padding: 5px;
-      bottom: 0; /* Adjusted value to align with the bottom of the slide */
-      left: 0;
-      width: 100%;
-      text-align: center;
-      transition: 0.2s;
-  }
+.caption {
+    background-color: #4c4c4c; /* Dark gray background */
+    color: #929292; /* Light gray text */
+    padding: 5px;
+    text-align: center; /* Center the text */
+    width: 100%; /* Ensure the caption takes the full width */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    /* Remove position absolute and related properties */
+}
 
-    /* Show captions on hover */
-    .mySlides1:hover .caption {
-        display: block;
-    }
-        
+/* No need for hover effect since captions are always visible */  
 
 /* Adjust the CSS for individual sections if needed */
 .header {
