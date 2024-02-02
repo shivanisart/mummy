@@ -247,28 +247,27 @@
         object-fit: cover; /* Maintain aspect ratio and cover the container */
     }
 
-
-  /* Style for prev/next buttons */
+/* Style for prev/next buttons */
 .prev, .next {
   position: absolute;
-  bottom: 10px; /* Position at the bottom of the container */
-  transform: translateX(-50%); /* Center the buttons horizontally */
-  font-size: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 36px;
   font-weight: bold;
   cursor: pointer;
-  padding: 00px;
+  padding: 10px;
   background-color: #4c4c4c;
   color: white;
   transition: background-color 0.3s;
 }
 
-/* Center the buttons horizontally */
 .prev {
-  left: calc(50% - 60px); /* Adjust based on your button width */
+  left: 0;
 }
 
 .next {
-  left: calc(50% + 20px); /* Adjust based on your button width */
+  right: 0;
+}width */
 }
 
     .prev:hover, .next:hover {
