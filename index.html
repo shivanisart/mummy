@@ -24,7 +24,12 @@
             padding: 10px;
             font-size: 16px; /* Adjust the font size to your preference */
         }
-
+@media (max-width: 7680px) {
+    .page-container, .slideshow-container, .event-container {
+        padding: 0 10px; /* Reduce padding on smaller screens */
+        max-width: 100%; /* Allow the containers to fill their parent width */
+    }
+}
 /* Apply max-width to the page container */
 .page-container {
     max-width: 900px;
