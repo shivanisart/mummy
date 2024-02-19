@@ -32,13 +32,19 @@
 }
 
 /* Styles for slideshow and event containers */
-.slideshow-container, .event-container {
+.slideshow-container,  {
     margin: 0 auto; /* This centers the content if necessary, might be redundant */
     padding: 0 20px; /* This ensures spacing from the edges */
     margin-bottom: 20px; /* Adjust the value as needed */
     box-sizing: border-box; /* Ensure padding does not expand the box */
 }
         
+
+        .event-container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    margin-bottom: 20px; /* Optional: Adjusts spacing between each event-container */
+}
 
         /* Ensure that the menu icon is visible at smaller screen sizes */
         @media (max-width: 7680px) {
@@ -364,7 +370,7 @@
         border: none;
         font-size: 24px;
         cursor: pointer;
-        padding: 10px;
+        padding: 0px;
         margin: 0;
         text-align: center; /* Add this line to align the text to the left */
     
