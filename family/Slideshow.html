@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Slideshow - 13 April 2024 - Kalpana's 80th</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+    }
+    h1 {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+      z-index: 1;
+    }
+    img {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      animation: slideshow .3s ease-in-out infinite;
+    }
+    @keyframes slideshow {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Family Slideshow - 13 April 2024 - Kalpana's 80th</h1>
+  <script>
+    window.onload = function() {
+      const images = [];
+      const folder = './';
+      const fileExtension = ['jpg', 'jpeg', 'png', 'gif'];
+      
+      function fetchImages() {
+        fetch(folder)
+          .then(response => response.text())
+          .then(data => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(data, 'text/html');
+            const links = htmlDoc.querySelectorAll('a');
+            links.forEach(link => {
+              const href = link.getAttribute('href');
+              const extension = href.split('.').pop().toLowerCase();
+              if (fileExtension.includes(extension)) {
+                images.push(href);
+              }
+            });
+          })
+          .catch(error => console.error('Error fetching images:', error))
+          .finally(() => {
+            showImages();
+          });
+      }
 
+      function showImages() {
+        const imageIndex = images.length ? Math.floor(Math.random() * images.length) : -1;
+        const imageSrc = imageIndex !== -1 ? images[imageIndex] : 'placeholder.jpg';
+        const img = new Image();
+        img.src = folder + imageSrc;
+        img.onload = function() {
+          document.body.appendChild(img);
+        };
+      }
+
+      setInterval(fetchImages, 300);
+    };
+  </script>
+</body>
+</html>
