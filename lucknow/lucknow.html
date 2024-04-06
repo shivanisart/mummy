@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Kalpana Mathur</title>
+    <!-- Include PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <!-- Add CSS for responsive styling and additional styles -->
     <style>
         /* Basic CSS styling */
         body {
@@ -16,123 +18,12 @@
             padding: 0;
         }
 
-        /* Style header and footer */
         header {
             background-color: #4c4c4c;
             color: #929292;
             text-align: center;
             padding: 10px;
-            font-size: 16px; /* Adjust the font size to your preference */
-        }
-@media (max-width: 7680px) {
-    .page-container, .slideshow-container, .event-container {
-        padding: 0 10px; /* Reduce padding on smaller screens */
-        max-width: 100%; /* Allow the containers to fill their parent width */
-    }
-}
-
-/* Styles for slideshow and event containers */
-.slideshow-container, .event-container {
-    margin: 0 auto; /* This centers the content if necessary, might be redundant */
-    padding: 0 20px; /* This ensures spacing from the edges */
-    margin-bottom: 20px; /* Adjust the value as needed */
-    box-sizing: border-box; /* Ensure padding does not expand the box */
-}
-        
-
-        /* Ensure that the menu icon is visible at smaller screen sizes */
-        @media (max-width: 7680px) {
-              .menu-icon {
-            position: fixed;
-            top: 0px;
-            right: 0px;
-            z-index: 2;
-            font-size: 10px;
-            cursor: pointer;
-            margin: 0px auto;
-            padding-top: 0px;
-            background-color: #4c4c4c;
-        }
-
-        .menu-container {
-            position: fixed;
-            top: 10;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(76, 76, 76, 0.85); /* Adjust the alpha value (0.8 in this example) for transparency */
-            color: #929292;
-            display: none;
-            z-index: 1;
-        }
-
-        .menu-content {
-            text-align: center;
-            padding: 50px;
-            text-decoration: none;
-            font-size: 1.5rem;
-            color: #929292;
-        }
-
-        .menu-content ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .menu-content li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        .menu-content a {
-        text-decoration: none;
-        color: #929292;
-        display: block; /* Add this line to make the entire area clickable */
-        padding: 10px; /* Add padding for better clickability */
-        }
-       .menu-content li.active a {
-        color: white;
-        text-decoration: none;
-        }
-
-    .close {
-    position: absolute;
-    top: 85%; /* Adjust this value to your preference */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    }
-
-    .close-details {
-    color: #929292;
-    font-size: 24px;
-    cursor: pointer;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    }
-
-
-
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-        }
-
-
-        /* Style header and footer */
-        header {
-            background-color: #4c4c4c;
-            color: #929292;
-            text-align: center;
-            padding: 10px;
+            font-size: 16px;
         }
 
         footer {
@@ -143,462 +34,95 @@
             margin-top: auto;
         }
 
-        /* Add CSS for the Font Awesome icons here */
-        .footer-icons {
-            font-size: 16px;
+        /* Responsive styling */
+        @media only screen and (max-width: 768px) {
+            .pdf-container {
+                width: 100%;
+            }
         }
-
-        .footer-icons a {
-            color: #929292;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        /* Style the icons on hover (optional) */
-        .footer-icons a:hover {
-            color: #07BFF;
-        }
-
-
-      /* Center the header content */
-          .header-content {
-            text-align: center;
-        }
-
-
-
-        h1 {
-            text-align: left;
-            font-size: 24px;
-             margin: 0 10px;
-        }
-            h2 {
-            text-align: left;
-            font-size: 24px;
-                 margin: 0 10px;
-        }
-
-          /* Style for the additional text */
-          .header-description {
-            font-size: 24px; /* Adjust the font size as needed */
-            margin-top: 10px; /* Add margin to separate it from the title */
-            color: #929292; /* Set the text color */
-          }
-
-
-          /* Center-align the text box */
-          .slideshow-text-center {
-              text-align: center;
-              padding: 20px; /* Add padding for spacing */
-          }
-
-          /* Left-align the text inside the text box */
-          .slideshow-text-left {
-              display: inline-block; /* Ensure inline block for left alignment */
-              text-align: left; /* Left-align the text inside the box */
-          }
-
-
-/* Adjust the CSS for individual sections if needed */
-.header {
-    text-align: center;
-    padding: 10px;
-}
-}
-
-/* Adjust the CSS for individual sections if needed */
-.header {
-    text-align: center;
-    padding: 10px;
-}
-    
-/* Other existing CSS styles... */
-
-/* Adjust the CSS for individual sections if needed */
-.header {
-    text-align: center;
-    padding: 10px;
-}
-    position: relative;
-    overflow: hidden;
-    height: 500px; /* Set a fixed height for the slideshow container */
-}
-
-/* Hide slides by default */
-    .mySlides {
-      display: none;
-    }
-
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-
-    .mySlides1 {
-        display: none;
-        height: 600px; /* Set your desired fixed height */
-    }
-
-    .mySlides1 img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Maintain aspect ratio and cover the container */
-    }
-
-/* Style for prev/next buttons */
-.prev, .next {
-  position: absolute;
-  top: 85%;
-  transform: translateY(-50%);
-  font-size: 36px;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 10px;
-  background-color: #4c4c4c;
-  color: white;
-  transition: background-color 0.3s;
-}
-
-.prev {
-  left: 0;
-}
-
-.next {
-  right: 0;
-}width */
-}
-
-    .prev:hover, .next:hover {
-      background-color: #4c4c4c;
-    }
-.mySlides1 {
-    position: relative; /* Ensure this container is positioned to allow more controlled positioning within it */
-    /* Other styles for .mySlides1 */
-}
-
-.caption {
-    background-color: #4c4c4c; /* Dark gray background */
-    color: #929292; /* Light gray text */
-    padding: 5px;
-    text-align: center; /* Center the text */
-    width: 100%; /* Ensure the caption takes the full width */
-     margin-bottom: 20px;
-    box-sizing: border-box; /* Include padding in the element's total width and height */
-    /* Remove position absolute and related properties */
-}
-
-/* No need for hover effect since captions are always visible */  
-
-/* Adjust the CSS for individual sections if needed */
-.header {
-    text-align: center;
-    padding: 10px;
-}
-  }
-  .life-story-section{
-    max-width: 100%; /* Set max-width to 100% for responsiveness */
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Adjust the CSS for individual sections if needed */
-.header {
-    text-align: center;
-    padding: 10px;
-}
-  }
-
-   .tribute-section{
-      max-width: 100%; /* Set max-width to 100% for responsiveness */
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Adjust the CSS for individual sections if needed */
-.header {
-    text-align: center;
-    padding: 10px;
-}
-  }         
-            /* Adjust the CSS for the image wrapper */
-.image-wrapper {
-    max-width: 100%; /* Ensure images don't exceed their natural size */
-    height: auto; /* Allow images to scale proportionally */
-    display: flex; /* Use flexbox to align images horizontally */
-    justify-content: center; /* Center-align images */
-    align-items: center; /* Center-align images */
-    flex-wrap: wrap; /* Allow images to wrap to the next line on smaller screens */
-    margin: 10px 0; /* Add margin for spacing */
-}
-
-/* Adjust the CSS for individual images */
-.image-wrapper img {
-    max-width: 100%; /* Ensure images don't exceed their natural size */
-    height: auto; /* Allow images to scale proportionally */
-    margin: 5px; /* Add margin between images */
-}
-.event-details {
-    display: none;
-    background-color: #4c4c4c; /* Set the background color to match your design */
-    color: white; /* Set the text color for event details */
-    font-size: 24px;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    text-align: center;
-    box-sizing: border-box; /* Include padding in the total width/height */
-}
-.event-button {
-    white-space: nowrap; /* Prevent line breaks */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Show ellipsis for overflow text */
-}
-
-/* Adjust the CSS for the content within the event details */
-.event-details p {
-    margin-bottom: 5px; /* Add margin at the bottom of each paragraph for spacing */
-}
-/* Style for open state */
-.event-details.open {
-    display: block;
-}
-
-/* Style for closed state */
-.event-details.closed {
-    display: none;
-    /* Add other styles for closed state if needed */
-}
-
-
-
-            
-
-    .event-button {
-        background-color: transparent;
-        color: #929292;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        padding: 10px;
-        margin: 0;
-        text-align: left; /* Add this line to align the text to the left */
-    
-}
-
-
-    .close-details {
-        color: #929292;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-.spacer {
-    height: 40px; /* Adjust the height as needed to create space */
-}
-
-.content {
-    display: none;
-    color: white; /* Set the text color for content */
-}
-
-
-    .event-image {
-        max-width: 100%; /* Ensure images don't exceed their natural size */
-        height: 400px; /* Maintain aspect ratio */
-        display: block; /* Remove extra space below images */
-        margin: 10px 0; /* Add margin for spacing */
-    }
-
-
     </style>
-    <!-- Include the Font Awesome CSS stylesheet -->
-    <style>
-    /* Basic CSS styling */
-    /* ... (your existing CSS code) ... */
-
-    /* Add CSS for the Font Awesome icons here */
-    .fa {
-        font-family: FontAwesome, sans-serif;
-    }
-</style>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+    <!-- Menu icon and container -->
     <div class="menu-icon" onclick="toggleMenu()">
         <img src="icon.jpg" alt="Menu" style="width: 50px; height: 50px;">
     </div>
-
     <div class="menu-container" id="menuContainer">
         <span class="close" onclick="closeMenu()">&times;</span>
         <div class="menu-content">
- <ul>
-                <li><a href="./index.html">Tributes for Kalpana</a></li><br>
-                 <li class="active"><a href="./lucknow/lucknow.html">Lucknow days</a></li>
+            <ul>
+                <li><a href="./index.html">Tributes for Kalpana</a></li>
+                <li class="active"><a href="./lucknow/lucknow.html">Lucknow days</a></li>
                 <li><a href="Comments.html">Please leave a comment</a></li>
             </ul>
         </div>
     </div>
 
+    <!-- Container for PDF viewer -->
+    <div class="page-container">
+        <header>
+            <h1>Kalpana Mathur</h1>
+            <p class="header-description">This is a collection of Memories put together by Atul:<br> Under construction <br>.</p>
+            <!-- PDF viewer -->
+            <div class="pdf-container">
+                <canvas id="pdfViewer"></canvas>
+            </div>
+        </header>
 
-     <div class="page-container">
-        
-           <header>
-               <h1>Kalpana Mathur</h1>
-       <p class="header-description">This is a collection of Memories put together by Atul:<br> Under construction <br>
-.<br>
-           <iframe src="Atul.pdf" width="100%" height="600px"></iframe>
- </p>
-         <!-- Play button for the title -->
-        <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
-        <!-- Additional text below the header -->
-        
-    </header>
+        <!-- JavaScript to render PDF -->
+        <script>
+            // URL of the PDF file
+            const pdfUrl = 'Atul.pdf';
 
+            // Function to render PDF
+            function renderPdf(url) {
+                // Fetch the PDF file
+                pdfjsLib.getDocument(url).promise.then(pdf => {
+                    // Get the first page of the PDF
+                    pdf.getPage(1).then(page => {
+                        // Set canvas element for rendering
+                        const canvas = document.getElementById('pdfViewer');
+                        const context = canvas.getContext('2d');
 
+                        // Set viewport for rendering
+                        const viewport = page.getViewport({ scale: 1 });
 
-                   
+                        // Set canvas dimensions
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+
+                        // Render PDF page on canvas
+                        page.render({ canvasContext: context, viewport: viewport });
+                    });
+                });
+            }
+
+            // Call the renderPdf function with the PDF URL
+            renderPdf(pdfUrl);
+        </script>
+    </div>
+
+    <!-- Footer -->
     <footer>
-
-        </div>
         <p>Contact</p>
         <div class="footer-icons">
             <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
-
+        </div>
         <p> Designed by Anand, Sunayana & Shivani&copy; Copyright Kalpana Mathur. All rights reserved.</p>
     </footer>
 
-<script>
+    <!-- JavaScript for menu toggle -->
+    <script>
+        function toggleMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            var currentDisplay = window.getComputedStyle(menuContainer).display;
+            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+        }
 
-   function toggleEvent(eventId) {
-    var eventDetails = document.getElementById(eventId);
-    eventDetails.style.display = 'block';
-}
-
-    function closeEvent(eventId) {
-        var eventDetails = document.getElementById(eventId);
-        eventDetails.style.display = 'none';
-    }
-
-    function showContent(contentId) {
-        var contents = document.querySelectorAll('.content');
-        contents.forEach(function (content) {
-            content.style.display = 'none';
-        });
-        document.getElementById(contentId).style.display = 'block';
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const subheadings = document.querySelectorAll('.subheading');
-        const contents = document.querySelectorAll('.content');
-
-        subheadings.forEach(subheading => {
-            subheading.addEventListener('click', () => {
-                const target = subheading.getAttribute('data-target');
-                contents.forEach(content => {
-                    content.style.display = 'none';
-                });
-                document.getElementById(target).style.display = 'block';
-            });
-        });
-    });
-
-           function toggleMenu() {
-        var menuContainer = document.getElementById('menuContainer');
-        var currentDisplay = window.getComputedStyle(menuContainer).display;
-
-        menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
-    }
-
-    function closeMenu() {
-        var menuContainer = document.getElementById('menuContainer');
-        menuContainer.style.display = 'none';
-    }
-            var slideIndex = 0;
-            var manualSlideIndex = 0;
-
-            // Start the automatic slideshow at the top
-            showSlides();
-            // Start the automatic slideshow at the bottom
-            showSlidesManual();
-
-            function showSlides() {
-                var i;
-                var slides = document.querySelectorAll(".mySlides1");
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {
-                    slideIndex = 1;
-                }
-                slides[slideIndex - 1].style.display = "block";
-                setTimeout(showSlides, 7000); // Change slide every 7 seconds
-            }
-
-            function showSlidesManual() {
-                var slides = document.querySelectorAll(".mySlides");
-                for (var i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                manualSlideIndex++;
-                if (manualSlideIndex > slides.length) {
-                    manualSlideIndex = 1;
-                }
-                slides[manualSlideIndex - 1].style.display = "block";
-                setTimeout(showSlidesManual, 7000); // Change slide every 7 seconds
-            }
-
-            function plusSlides(n) {
-                slideIndex += n;
-                var slides = document.querySelectorAll(".mySlides1");
-                if (slideIndex > slides.length) {
-                    slideIndex = 1;
-                }
-                if (slideIndex < 1) {
-                    slideIndex = slides.length;
-                }
-                for (var i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slides[slideIndex - 1].style.display = "block";
-            }
-
-            function plusSlidesGallery(n) {
-                manualSlideIndex += n;
-                var slides = document.querySelectorAll(".mySlides");
-                if (manualSlideIndex > slides.length) {
-                    manualSlideIndex = 1;
-                }
-                if (manualSlideIndex < 1) {
-                    manualSlideIndex = slides.length;
-                }
-                for (var i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slides[manualSlideIndex - 1].style.display = "block";
-            }
-
-
-
-            var titleAudio; // Declare the audio variable globally
-
-            function playTitleAudio() {
-                if (!titleAudio) {
-                    titleAudio = new Audio('lindzay.m4a'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
-                    titleAudio.loop = false; // Set the audio to loop continuously
-                    titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
-                    titleAudio.play();
-                } else {
-                    if (!titleAudio.paused) {
-                        titleAudio.pause(); // Pause the audio if it's playing
-                    } else {
-                        titleAudio.play(); // Resume playing if it's paused
-                    }
-                }
-            }
-
-        </script>
-
+        function closeMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            menuContainer.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
