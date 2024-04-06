@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalpana Mathur</title>
-    <!-- Your CSS styles -->
+    <!-- Include PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <!-- Add CSS for responsive styling and additional styles -->
     <style>
-        /* Your CSS styles here */
+        /* Basic CSS styling */
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
             background-color: #4c4c4c;
@@ -21,7 +23,7 @@
             color: #929292;
             text-align: center;
             padding: 10px;
-            font-size: 16px; 
+            font-size: 16px;
         }
 
         footer {
@@ -32,134 +34,97 @@
             margin-top: auto;
         }
 
-        .page-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 50px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #333;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        input[type="submit"] {
-            background-color: #4c4c4c;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #333;
-        }
-
-        textarea {
-            height: 100px;
-        }
-
-        /* Menu icon */
-        .menu-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            cursor: pointer;
-        }
-
-        /* Menu container */
-        .menu-container {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-            display: none;
-        }
-
-        .menu-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
-        .menu-content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .menu-content li {
-            margin-bottom: 10px;
-        }
-
-        .menu-content a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 24px;
-        }
-
-        .close-menu {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: #fff;
-            cursor: pointer;
-            font-size: 24px;
+        /* Responsive styling */
+        @media only screen and (max-width: 768px) {
+            .pdf-container {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Menu icon -->
+    <!-- Menu icon and container -->
     <div class="menu-icon" onclick="toggleMenu()">
         <img src="./icon.jpg" alt="Menu" style="width: 50px; height: 50px;">
     </div>
-
-    <!-- Menu container -->
-    <div class="menu-container" id="menuContainer">
+    <div class="menu-container" id="menuContainer" style="display: none;">
+        <span class="close" onclick="toggleMenu()">&times;</span>
         <div class="menu-content">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="./index.html">Tributes for Kalpana</a></li>
+                <li class="active"><a href="./lucknow/lucknow.html">Lucknow days</a></li>
+                <li><a href="Comments.html">Please leave a comment</a></li>
             </ul>
         </div>
-        <span class="close-menu" onclick="toggleMenu()">&times;</span>
     </div>
 
-    <header>
-        <h1>Kalpana Mathur</h1>
-    </header>
-
+    <!-- Container for PDF viewer -->
     <div class="page-container">
-        <h2>Leave a Comment</h2>
-        <!-- HTML form -->
-        <form action="https://formspree.io/f/your-form-id" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
+        <header>
+            <h1>Kalpana Mathur</h1>
+            <p class="header-description">This is a collection of Memories put together by Atul:<br>  <br>.</p>
+            <!-- PDF viewer -->
+            <div class="pdf-container">
+                <canvas id="pdfViewer"></canvas>
+            </div>
+        </header>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
+        <!-- JavaScript to render PDF -->
+        <script>
+            // URL of the PDF file
+            const pdfUrl = 'Atul.pdf';
 
-            <label for="comment">Comment:</label>
-            <textarea id="comment" name="comment" rows="4" cols="50"></textarea
+            // Function to render PDF
+            function renderPdf(url) {
+                // Fetch the PDF file
+                pdfjsLib.getDocument(url).promise.then(pdf => {
+                    // Render all pages of the PDF
+                    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                        // Get each page of the PDF
+                        pdf.getPage(pageNum).then(page => {
+                            // Set canvas element for rendering
+                            const canvas = document.createElement('canvas');
+                            canvas.className = 'pdf-page'; // Add a class for styling
+                            const context = canvas.getContext('2d');
+
+                            // Set viewport for rendering
+                            const viewport = page.getViewport({ scale: 1 });
+
+                            // Set canvas dimensions
+                            canvas.width = viewport.width;
+                            canvas.height = viewport.height;
+
+                            // Append canvas to PDF viewer container
+                            document.getElementById('pdfViewer').appendChild(canvas);
+
+                            // Render PDF page on canvas
+                            page.render({ canvasContext: context, viewport: viewport });
+                        });
+                    }
+                });
+            }
+
+            // Call the renderPdf function with the PDF URL
+            renderPdf(pdfUrl);
+        </script>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact</p>
+        <div class="footer-icons">
+            <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p> Designed by Anand, Sunayana & Shivani&copy; Copyright Kalpana Mathur. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for menu toggle -->
+    <script>
+        function toggleMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            var currentDisplay = window.getComputedStyle(menuContainer).display;
+            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
