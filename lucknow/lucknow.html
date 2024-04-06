@@ -47,13 +47,13 @@
     <div class="menu-icon" onclick="toggleMenu()">
         <img src="./icon.jpg" alt="Menu" style="width: 50px; height: 50px;">
     </div>
-    <div class="menu-container" id="menuContainer">
-        <span class="close" onclick="closeMenu()">&times;</span>
+    <div class="menu-container" id="menuContainer" style="display: none;">
+        <span class="close" onclick="toggleMenu()">&times;</span>
         <div class="menu-content">
             <ul>
                 <li><a href="./index.html">Tributes for Kalpana</a></li>
                 <li class="active"><a href="./lucknow/lucknow.html">Lucknow days</a></li>
-                <li><a href="./Comments.html">Please leave a comment</a></li>
+                <li><a href="Comments.html">Please leave a comment</a></li>
             </ul>
         </div>
     </div>
@@ -78,22 +78,29 @@
             function renderPdf(url) {
                 // Fetch the PDF file
                 pdfjsLib.getDocument(url).promise.then(pdf => {
-                    // Get the first page of the PDF
-                    pdf.getPage(1).then(page => {
-                        // Set canvas element for rendering
-                        const canvas = document.getElementById('pdfViewer');
-                        const context = canvas.getContext('2d');
+                    // Render all pages of the PDF
+                    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                        // Get each page of the PDF
+                        pdf.getPage(pageNum).then(page => {
+                            // Set canvas element for rendering
+                            const canvas = document.createElement('canvas');
+                            canvas.className = 'pdf-page'; // Add a class for styling
+                            const context = canvas.getContext('2d');
 
-                        // Set viewport for rendering
-                        const viewport = page.getViewport({ scale: 1 });
+                            // Set viewport for rendering
+                            const viewport = page.getViewport({ scale: 1 });
 
-                        // Set canvas dimensions
-                        canvas.width = viewport.width;
-                        canvas.height = viewport.height;
+                            // Set canvas dimensions
+                            canvas.width = viewport.width;
+                            canvas.height = viewport.height;
 
-                        // Render PDF page on canvas
-                        page.render({ canvasContext: context, viewport: viewport });
-                    });
+                            // Append canvas to PDF viewer container
+                            document.getElementById('pdfViewer').appendChild(canvas);
+
+                            // Render PDF page on canvas
+                            page.render({ canvasContext: context, viewport: viewport });
+                        });
+                    }
                 });
             }
 
@@ -117,11 +124,6 @@
             var menuContainer = document.getElementById('menuContainer');
             var currentDisplay = window.getComputedStyle(menuContainer).display;
             menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
-        }
-
-        function closeMenu() {
-            var menuContainer = document.getElementById('menuContainer');
-            menuContainer.style.display = 'none';
         }
     </script>
 </body>
