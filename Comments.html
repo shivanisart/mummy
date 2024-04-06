@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalpana Mathur - Comments</title>
+    <!-- Include Font Awesome CSS stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <!-- Your CSS styles -->
     <style>
         /* Your CSS styles here */
@@ -132,15 +135,6 @@
             font-size: 24px;
             cursor: pointer;
         }
-        <!-- Include the Font Awesome CSS stylesheet -->
-    <style>
-    /* Basic CSS styling */
-    /* ... (your existing CSS code) ... */
-
-    /* Add CSS for the Font Awesome icons here */
-    .fa {
-        font-family: FontAwesome, sans-serif;
-    }
     </style>
 </head>
 <body>
@@ -160,42 +154,32 @@
         </div>
     </div>
 
-    <header>
-        <h1>Kalpana Mathur</h1>
-    </header>
+<header>
+    <h1>Kalpana Mathur</h1>
+</header>
 
-    <div class="page-container">
-        <h2>Leave a Comment</h2>
-        <!-- Comment form -->
-        <form action="/submit_comment.php" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+<div class="page-container">
+    <h2>Leave a Comment</h2>
+    <!-- Comment form -->
+    <p>Please <a href="mailto:shivanimathurart@gmail.com">email</a> your comment.</p>
+</div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="comment">Comment:</label>
-            <textarea id="comment" name="comment" rows="4" required></textarea>
-            <input type="file" id="file" name="file">
-           
-            <input type="submit" value="Submit">
-        </form>
+<footer>
+    <p>Contact</p>
+    <div class="footer-icons">
+        <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
+    <p>Designed by Anand, Sunayana & Shivani&copy; Copyright Kalpana Mathur. All rights reserved.</p>
+</footer>
 
-    <footer>
-        <p>Contact</p>
-        <div class="footer-icons">
-            <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p>Designed by Anand, Sunayana & Shivani&copy; Copyright Kalpana Mathur. All rights reserved.</p>
-    </footer>
-
-    <!-- JavaScript for menu toggle -->
-    <script>
-        function toggleMenu() {
-            var menuContainer = document.getElementById('menuContainer');
-            var currentDisplay = window.getComputedStyle(menuContainer).display;
-            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
-        }
-    </script>
+<!-- JavaScript for menu toggle -->
+<script>
+    function toggleMenu() {
+        var menuContainer = document.getElementById('menuContainer');
+        var currentDisplay = window.getComputedStyle(menuContainer).display;
+        menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+    }
+</script>
 </body>
 </html>
+    
