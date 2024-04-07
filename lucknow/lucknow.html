@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucknow Days - Kalpana Mathur</title>
-    <!-- Include PDF.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <!-- Add CSS for responsive styling and additional styles -->
     <style>
         /* Basic CSS styling */
@@ -32,17 +30,32 @@
             padding: 10px;
             margin-top: auto;
             font-size: 14px;
+            text decoration: none;
         }
 
         /* PDF container styling */
         .pdf-container {
             margin-top: 20px;
         }
+
+        /* Styles for the envelope icon */
+        footer .footer-icons a {
+            color: #929292; /* Set the color of the envelope icon */
+        }
+
+        footer .footer-icons a:hover {
+            color: #fffff; /* Adjust the hover color if needed */
+        }
     </style>
     <!-- Include the Font Awesome CSS stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <!-- Menu icon -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <img src="./icon.jpg" alt="Menu" style="width: 50px; height: 50px;">
+    </div>
+
     <!-- Container for PDF viewer -->
     <div class="page-container">
         <header>
@@ -101,6 +114,15 @@
 
         // Call the renderPdf function with the PDF URL
         renderPdf(pdfUrl);
+    </script>
+
+    <!-- JavaScript for menu toggle -->
+    <script>
+        function toggleMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            var currentDisplay = window.getComputedStyle(menuContainer).display;
+            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+        }
     </script>
 </body>
 </html>
