@@ -1915,6 +1915,16 @@ A special person like you deserves the very best celebration. I know your specia
 
 <script>
 
+    // Function to toggle play/pause of videoPlayer1
+    function toggleVideoPlayer1() {
+        var video = document.getElementById('videoPlayer1');
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
+
    function toggleEvent(eventId) {
     var eventDetails = document.getElementById(eventId);
     eventDetails.style.display = 'block';
