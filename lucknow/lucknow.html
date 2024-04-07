@@ -100,15 +100,19 @@
         }
 
         /* PDF container styling */
+      
+            .pdf-container {
+            width: 100%; /* Adjust width as needed */
+            height: 100vh; /* Adjust height as needed */
+            overflow: auto; /* Add scrollbars if necessary */
+        }
+        
+        
+        
         .pdf-container {
             margin-top: 20px;
         }
-               /* Add CSS for the PDF container */
-        .pdf-container {
-            width: 100%; /* Adjust width as needed */
-            height: 100%; /* Adjust height as needed */
-            overflow: auto; /* Add scrollbars if necessary */
-        }
+   
     </style>
 </head>
 <body>
@@ -134,7 +138,7 @@
             <p class="header-description">This is a collection of Memories put together by Atul:<br>  <br>.</p>
             <!-- PDF viewer -->
             <div class="pdf-container">
-                <embed src="./Atul.pdf" type="application/pdf" width="100%" height="600px">
+                <embed src="./Atul.pdf" type="application/pdf" width="100%" height="100%">
             </div>
         </header>
     </div>
