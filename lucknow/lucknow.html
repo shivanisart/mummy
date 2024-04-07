@@ -131,18 +131,18 @@
         </div>
     </div>
 
-    <!-- Container for PDF viewer -->
-    <div class="page-container">
-        <header>
-            <h1>Kalpana Mathur</h1>
-            <p class="header-description">This is a collection of Memories put together by Atul:<br>  <br>.</p>
-            <!-- PDF viewer -->
-            <div class="pdf-container">
-                <embed src="./Atul.pdf" type="application/pdf" width="100%" height="100%">
-            </div>
-        </header>
-    </div>
-
+            <!-- Container for PDF viewer -->
+<div class="page-container">
+    <header>
+        <h1>Kalpana Mathur</h1>
+        <p class="header-description">This is a collection of Memories put together by Atul. <br>  <br>.</p>
+        <!-- Holding picture for PDF -->
+        <div class="pdf-container" onclick="openPDF()">
+            <img src="./family/lucknow.jpg" alt="PDF Placeholder Image" style="width: 100%; height: auto;">
+        </div>
+    </header>
+</div>
+    
     <footer>
         <p>Contact</p>
         <div class="footer-icons">
@@ -158,6 +158,12 @@
             var currentDisplay = window.getComputedStyle(menuContainer).display;
             menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
         }
-    </script>
+
+   
+    // Function to open the PDF when clicked
+    function openPDF() {
+        window.open('./Atul.pdf', '_blank');
+    }
+</script>
 </body>
 </html>
