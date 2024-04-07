@@ -55,14 +55,14 @@
             cursor: pointer;
         }
 
-         /* Menu container */
+      
         .menu-container {
             position: fixed;
-            top: 10px;
+            top: 10;
             right: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(76, 76, 76, 0.85);
+            background-color: rgba(76, 76, 76, 0.85); /* Adjust the alpha value (0.8 in this example) for transparency */
             color: #929292;
             display: none;
             z-index: 1;
@@ -71,7 +71,9 @@
         .menu-content {
             text-align: center;
             padding: 50px;
+            text-decoration: none;
             font-size: 1.5rem;
+            color: #929292;
         }
 
         .menu-content ul {
@@ -80,30 +82,53 @@
         }
 
         .menu-content li {
-            margin-bottom: 20px;
+            display: inline-block;
+            margin-right: 20px;
         }
 
         .menu-content a {
+        text-decoration: none;
+        color: #929292;
+        display: block; /* Add this line to make the entire area clickable */
+        padding: 10px; /* Add padding for better clickability */
+        }
+       .menu-content li.active a {
+        color: white;
+        text-decoration: none;
+        }
+
+    .close {
+    position: absolute;
+    top: 85%; /* Adjust this value to your preference */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+
+    .close-details {
+    color: #929292;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+
+
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
             text-decoration: none;
-            color: #929292;
-            display: block;
-            padding: 10px;
         }
-
-        .menu-content li.active a {
-            background-color: rgba(255, 255, 255, 0.3);
-            color: #fff;
-        }
-
-        .close-menu {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-        } 
-        
+  
+    
      
     </style>
 </head>
