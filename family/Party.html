@@ -8,14 +8,13 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #4c4c4c;
+      background-color: black;
     }
     h1 {
       position: absolute;
       top: 20px;
-      text-align: center;
       left: 20px;
-      color: #929292;
+      color: white;
       z-index: 1;
     }
     img {
@@ -38,7 +37,7 @@
   <script>
     window.onload = function() {
       const images = [];
-      const folder = './';
+      const folder = 'shivanisart/mummy/family/';
       
       function fetchImages() {
         fetch(`https://api.github.com/repos/${folder}/contents`)
@@ -62,8 +61,8 @@
       }
 
       function showImages() {
-        const imageIndex = images.length ? Math.floor(Math.random() * images.length) : -1;
-        const imageSrc = imageIndex !== -1 ? images[imageIndex] : 'placeholder.jpg';
+        const imageIndex = Math.floor(Math.random() * images.length);
+        const imageSrc = images[imageIndex];
         const img = new Image();
         img.src = imageSrc;
         img.onload = function() {
@@ -71,7 +70,7 @@
         };
       }
 
-      setInterval(fetchImages, 300);
+      setInterval(fetchImages, 3000); // Adjust the interval as needed
     };
   </script>
 </body>
