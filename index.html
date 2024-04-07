@@ -404,6 +404,23 @@ o<!DOCTYPE html>
     }
 
 
+    .video-container {
+        position: relative;
+        max-width: 100%;
+    }
+
+    .video-container video {
+        width: 100%;
+    }
+
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
     </style>
     <!-- Include the Font Awesome CSS stylesheet -->
     <style>
@@ -1308,17 +1325,17 @@ A friendship embraces, pure and true,<br>
 A timeless tale for me and you.<br><br>
 </p>  
 
-      <p>Shalini Sinha <br></p> 
-
-
-  
-        <video id="videoPlayer1" playsinline poster="./family/shalinis.jpg">
-    <source src="./family/Shalinisinha.MP4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
         
-       
-        <p>Sanjay Kalyani
+<div class="video-container">
+    <p>Shalini Sinha</p>
+    <video id="videoPlayer1" playsinline poster="./family/shalinis.jpg">
+        <source src="./family/Shalinisinha.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <button class="play-button">▶️</button>
+</div>
+
+<p>Sanjay Kalyani
          </p>
       
     </div>
