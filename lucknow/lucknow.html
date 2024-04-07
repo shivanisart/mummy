@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucknow Days - Kalpana Mathur</title>
-    <!-- Add CSS for responsive styling and additional styles -->
+    <title>Kalpana Mathur - Comments</title>
+    <!-- Add Font Awesome CSS stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Your CSS styles -->
     <style>
-        /* Basic CSS styling */
+        /* Your CSS styles here */
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
             background-color: #4c4c4c;
             margin: 0;
             color: #929292;
             padding: 0;
+            
         }
 
         header {
@@ -21,6 +24,7 @@
             text-align: center;
             padding: 10px;
             font-size: 16px;
+           text-decoration: none;
         }
 
         footer {
@@ -30,9 +34,29 @@
             padding: 10px;
             margin-top: auto;
             font-size: 14px;
-            text decoration: none;
         }
-    .menu-container {
+
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        /* Add the rest of your CSS styles here */
+        /* Menu icon, menu-container, and menu-content styles (as per your requirements) */
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+      
+        .menu-container {
             position: fixed;
             top: 10;
             right: 0;
@@ -105,13 +129,24 @@
         }
   
     h2 {
-               text-align: center;
-            font-size: 24px;
-                 margin: 0 10px;
-        text-decoration: none;
-           color: #929292;
+         text-align: center;
+         font-size: 24px;
+         margin: 0 10px;
+         text-decoration: none;
+        color: #929292;
     } 
         
+
+h2 a:hover {
+    color: #ffffff; /* Adjust the hover color if needed */
+}
+        /* CSS to change the color of the envelope icon */
+.page-container h2 a {
+    color: #929292; /* Set the color of the envelope icon */
+}
+
+
+   
 
         /* PDF container styling */
         .pdf-container {
