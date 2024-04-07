@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalpana Mathur</title>
+    <title>Lucknow Days - Kalpana Mathur</title>
     <!-- Include PDF.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <!-- Add CSS for responsive styling and additional styles -->
     <style>
-        
         /* Basic CSS styling */
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
@@ -35,174 +34,73 @@
             font-size: 14px;
         }
 
-        /* Responsive styling */
-        @media only screen and (max-width: 768px) {
-            .pdf-container {
-                width: 100%;
-            }
-        }
-
-       .menu-icon {
-    position: fixed;
-    top: 0px;
-    right: 0px; /* Adjusted to position on the right */
-    z-index: 2;
-    font-size: 10px;
-    cursor: pointer;
-    margin: 0px auto;
-    padding-top: 0px;
-    background-color: #4c4c4c;
-}
-
-.menu-container {
-    position: fixed;
-    top: 10px; /* Adjusted to position from top */
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(76, 76, 76, 0.85); /* Adjust the alpha value (0.8 in this example) for transparency */
-    color: #929292;
-    display: none;
-    z-index: 1;
-} 
-     
-       
-
-        /* Styling for menu content */
-        .menu-content {
-            text-align: center;
-            padding: 50px;
-            font-size: 1.5rem;
-        }
-
-        .menu-content ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .menu-content li {
-            margin-bottom: 20px;
-        }
-
-        .menu-content a {
-            text-decoration: none;
-            color: #929292;
-            display: block; /* Make the entire area clickable */
-            padding: 10px; /* Add padding for better clickability */
-        }
-
-        .menu-content li.active a {
-            color: white;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
         /* PDF container styling */
         .pdf-container {
             margin-top: 20px;
         }
-        <!-- Include the Font Awesome CSS stylesheet -->
-    <style>
-    /* Basic CSS styling */
-    /* ... (your existing CSS code) ... */
-
-    /* Add CSS for the Font Awesome icons here */
-    .fa {
-        font-family: FontAwesome, sans-serif;
-    }
     </style>
+    <!-- Include the Font Awesome CSS stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- Menu icon and container -->
-    <div class="menu-icon" onclick="toggleMenu()">
-        <img src="../icon.jpg" alt="Menu" style="width: 50px; height: 50px;">
-    </div>
-    <div class="menu-container" id="menuContainer">
-        <span class="close" onclick="toggleMenu()">&times;</span>
-        <div class="menu-content">
-            <ul>
-                <li><a href="../index.html">Tributes for Kalpana</a></li>
-                <li class="active"><a href="../lucknow/lucknow.html">Lucknow days</a></li>
-                <li><a href="../Comments.html">Please leave a comment</a></li>
-            </ul>
-        </div>
-    </div>
-
     <!-- Container for PDF viewer -->
     <div class="page-container">
         <header>
-            <h1>Kalpana Mathur</h1>
-            <p class="header-description">This is a collection of Memories put together by Atul:<br>  <br>.</p>
+            <h1>Lucknow Days - Kalpana Mathur</h1>
+            <p class="header-description">This is a collection of Memories from Lucknow</p>
             <!-- PDF viewer -->
             <div class="pdf-container">
                 <canvas id="pdfViewer"></canvas>
             </div>
         </header>
-
-        <!-- JavaScript to render PDF -->
-        <script>
-            // URL of the PDF file
-            const pdfUrl = './Atul.pdf';
-
-            // Function to render PDF
-            function renderPdf(url) {
-                // Fetch the PDF file
-                pdfjsLib.getDocument(url).promise.then(pdf => {
-                    // Render all pages of the PDF
-                    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                        // Get each page of the PDF
-                        pdf.getPage(pageNum).then(page => {
-                            // Set canvas element for rendering
-                            const canvas = document.createElement('canvas');
-                            canvas.className = 'pdf-page'; // Add a class for styling
-                            const context = canvas.getContext('2d');
-
-                            // Set viewport for rendering
-                            const viewport = page.getViewport({ scale: 1 });
-
-                            // Set canvas dimensions
-                            canvas.width = viewport.width;
-                            canvas.height = viewport.height;
-
-                            // Append canvas to PDF viewer container
-                            document.getElementById('pdfViewer').appendChild(canvas);
-
-                            // Render PDF page on canvas
-                            page.render({ canvasContext: context, viewport: viewport });
-                        });
-                    }
-                });
-            }
-
-            // Call the renderPdf function with the PDF URL
-            renderPdf(pdfUrl);
-        </script>
     </div>
-<footer>
 
-        </div>
+    <!-- Footer -->
+    <footer>
         <p>Contact</p>
         <div class="footer-icons">
             <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
-
-        <p> Designed by Anand, Sunayana & Shivani&copy; Copyright Kalpana Mathur. All rights reserved.</p>
+        </div>
+        <p>Designed by Anand, Sunayana & Shivani &copy; Copyright Kalpana Mathur. All rights reserved.</p>
     </footer>
 
-
-    <!-- JavaScript for menu toggle -->
+    <!-- JavaScript to render PDF -->
     <script>
-        function toggleMenu() {
-            var menuContainer = document.getElementById('menuContainer');
-            var currentDisplay = window.getComputedStyle(menuContainer).display;
-            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+        // URL of the PDF file
+        const pdfUrl = './Atul.pdf';
+
+        // Function to render PDF
+        function renderPdf(url) {
+            // Fetch the PDF file
+            pdfjsLib.getDocument(url).promise.then(pdf => {
+                // Render all pages of the PDF
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                    // Get each page of the PDF
+                    pdf.getPage(pageNum).then(page => {
+                        // Set canvas element for rendering
+                        const canvas = document.createElement('canvas');
+                        canvas.className = 'pdf-page'; // Add a class for styling
+                        const context = canvas.getContext('2d');
+
+                        // Set viewport for rendering
+                        const viewport = page.getViewport({ scale: 1 });
+
+                        // Set canvas dimensions
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+
+                        // Append canvas to PDF viewer container
+                        document.getElementById('pdfViewer').appendChild(canvas);
+
+                        // Render PDF page on canvas
+                        page.render({ canvasContext: context, viewport: viewport });
+                    });
+                }
+            });
         }
+
+        // Call the renderPdf function with the PDF URL
+        renderPdf(pdfUrl);
     </script>
 </body>
 </html>
