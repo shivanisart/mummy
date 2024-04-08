@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>13 April 2024<br> Kalpana's 80th</title>
+  <title>13 April 2024 Kalpana's 80th</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       background-color: black;
+      overflow: hidden; /* to hide overflowing images */
     }
     h1 {
       position: absolute;
@@ -18,47 +19,184 @@
       z-index: 1;
     }
     img {
-      display: block;
+      position: absolute; /* position images absolutely for slideshow effect */
+      top: 0;
+      left: 0;
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
-      animation: slideshow .3s ease-in-out infinite;
+      animation: slideshow .6s ease-in-out infinite; /* adjusted animation timing */
     }
     @keyframes slideshow {
-      0% { opacity: 0; }
+      0%, 100% { opacity: 0; }
       50% { opacity: 1; }
-      100% { opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <h1>13 April 2024<br> Kalpana's 80th</h1>
+  <h1>13 April 2024 Kalpana's 80th</h1>
   
   <script>
     window.onload = function() {
-      const images = [];
-      const folder = './';
-      
-      function fetchImages() {
-        fetch(`https://api.github.com/repos/${folder}/contents`)
-          .then(response => response.json())
-          .then(data => {
-            data.forEach(file => {
-              if (file.type === 'file' && isImage(file.name)) {
-                images.push(file.download_url);
-              }
-            });
-          })
-          .catch(error => console.error('Error fetching images:', error))
-          .finally(() => {
-            showImages();
-          });
-      }
-
-      function isImage(fileName) {
-        const ext = fileName.split('.').pop().toLowerCase();
-        return ['jpg', 'jpeg', 'png', 'gif'].includes(ext);
-      }
+      const images = [
+        './Pm2.GIF',
+        './Crescent .heic',
+        './kusuma.heic',
+        './Made3.HEIC',
+        './Nina1.heic',
+        './nw.heic',
+        './papadanapur.jpg.HEIC',
+        './Pm1.heic',
+        './ramnee.heic',
+        './ramneecert.jpg.HEIC',
+        './ramneereport.jpg.HEIC',
+        './Report .heic',
+        './shashank.jpg.HEIC',
+        './sophia.jpg.HEIC',
+        './udayani.jpg.HEIC',
+        './Uni.HEIC',
+        './4girls.jpg',
+        './5garland.jpg',
+        './50anniv.jpg',
+        './233.JPG',
+        './Alka1.jpg',
+        './Alka2.jpg',
+        './Alka3.jpg',
+        './ally.jpg',
+        './Anita.jpg',
+        './Anu.jpg',
+        './anutanu.jpg.JPG',
+        './Archit.jpg',
+        './arti.jpg',
+        './Ayesha.jpg',
+        './Babumausi.jpg',
+        './bajjo.jpg.jpg',
+        './Bhatkhande.jpg',
+        './Bittoo1.JPG',
+        './Bittoo2.JPG',
+        './Boac.jpg',
+        './Buaji.jpg',
+        './buaji.jpg.jpg',
+        './chacha.jpg',
+        './Chand.jpg',
+        './cheena1.JPG',
+        './cherryblossom.jpg.jpg',
+        './Chetana.JPG',
+        './Childhood.jpg',
+        './cornwall.jpg.jpg',
+        './Cover.jpg',
+        './Crescent.jpg',
+        './Dance.JPG',
+        './daughters.jpg',
+        './Daughters1.jpg',
+        './Daughters2.jpg',
+        './daughters2.jpg.jpg',
+        './Dehradun.JPG',
+        './dhun1.JPG',
+        './dhun2.JPG',
+        './didi 2.jpg',
+        './didi.jpg',
+        './dipu.jpg.JPG',
+        './drink.jpg.jpg',
+        './event3clip.jpg',
+        './event3dublin1965.jpg',
+        './family.jpg.jpg',
+        './family2.jpg',
+        './five.jpg',
+        './four.jpg.jpg',
+        './gardening.jpg.jpg',
+        './Golf.jpg',
+        './grandchildren.jpg.jpg',
+        './guddu.jpg',
+        './guddu2.jpg',
+        './havan.jpg.jpg',
+        './herboys.jpg.jpg',
+        './How do you do V & A.jpg',
+        './jaya.JPG',
+        './Jijaji.jpg',
+        './Kiss.jpg',
+        './Kobrat.jpg',
+        './Lovestory1.jpg',
+        './lucknow.jpg',
+        './madefor.JPG',
+        './Mahatab.jpg',
+        './mala.jpg',
+        './Mamta.jpg',
+        './Manda.jpg',
+        './Meetu.jpg',
+        './meetuchimmie.jpg.jpg',
+        './meetuchimmie2.jpg',
+        './Mini.jpg',
+        './Nananani.JPG',
+        './nani.jpg.jpg',
+        './nina.jpg',
+        './Nina2.jpg',
+        './Ninastory.jpg',
+        './P1.jpg',
+        './P2.jpg',
+        './P3.jpg',
+        './P4.jpg',
+        './P5.jpg',
+        './P6.jpg',
+        './P7.jpg',
+        './P8.jpg',
+        './P9.jpg',
+        './painting.jpg',
+        './Papafamily.jpg',
+        './papamum.jpg.JPG',
+        './papapiyu.jpg.jpg',
+        './pappuchacha.jpg.jpg',
+        './Piyu.jpg',
+        './piyu.jpg.jpg',
+        './Piyu1.jpg',
+        './Piyu2.jpg',
+        './pm3.jpg',
+        './Poonam.jpg',
+        './prague.jpg.jpg',
+        './Ramaa.jpg',
+        './Ranjitpuri.jpg',
+        './Rc.JPG',
+        './reema.JPG',
+        './Reena.jpg',
+        './Rimmi.jpg',
+        './Rishi.jpg',
+        './Rita.jpg',
+        './Roli.jpg',
+        './Roli1.jpg',
+        './Sangeeta.jpg',
+        './Scott.jpg',
+        './shalinis.jpg',
+        './Shashi.jpg',
+        './shivani.jpg',
+        './Shreya.jpg',
+        './Shubhra.JPG',
+        './Shubhra1.jpg',
+        './smallgrandchildren.jpg.jpg',
+        './solomon.jpg',
+        './sophia.JPG',
+        './still.jpg',
+        './sujata.JPG',
+        './Suman.jpg',
+        './Sumati.jpg',
+        './Svasti.jpg',
+        './Tanu.jpg',
+        './tanu.jpg.JPG',
+        './Tanugoel.jpg',
+        './tauji.jpg',
+        './tennis.jpg.jpg',
+        './umalliru.jpg.jpg',
+        './Vandanapant.jpg',
+        './Vandanaraj.jpg',
+        './Vidushi.JPG',
+        './Vinni.jpg',
+        './Vinnie.jpg',
+        './Virgine.jpg',
+        './wedding1965.JPG',
+        './wordle.jpg',
+        './Wow .jpg',
+        './ayesha.jpg.PNG',
+        './Manjari .png'
+      ];
 
       function showImages() {
         const imageIndex = Math.floor(Math.random() * images.length);
@@ -66,11 +204,13 @@
         const img = new Image();
         img.src = imageSrc;
         img.onload = function() {
+          // Remove existing images before adding new one
+          document.querySelectorAll('img').forEach(el => el.remove());
           document.body.appendChild(img);
         };
       }
 
-      setInterval(fetchImages, 3000); // Adjust the interval as needed
+      setInterval(showImages, 3000); // Adjust the interval as needed
     };
   </script>
 </body>
