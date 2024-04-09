@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,27 +20,34 @@
       z-index: 1;
     }
    img {
-  position: absolute; /* position images absolutely for slideshow effect */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* ensures the full image is displayed without cropping */
-  animation: slideshow 18s linear infinite; /* adjusted animation timing */
+      position: absolute; /* position images absolutely for slideshow effect */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* ensures the full image is displayed without cropping */
+      animation: slideshow 18s linear infinite; /* adjusted animation timing */
+      opacity: 0; /* initially hide images */
     }
-    @keyframes slideshow {
-      0%, 100% { opacity: 0; }
-      2%, 98% { opacity: 1; }
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1;
+      color: white;
     }
   </style>
 </head>
 <body>
   <h1>13 April 2024 Kalpana's 80th</h1>
+  <div class="controls">
+    <button id="playPauseButton">Pause</button>
+  </div>
   
   <script>
     window.onload = function() {
       const images = [
-        './Pm2.GIF',
+         './Pm2.GIF',
         './Crescent .heic',
         './kusuma.heic',
         './Made3.HEIC',
@@ -198,7 +206,19 @@
         './Manjari .png'
       ];
 
-      // Function to shuffle the images array randomly
+
+      let paused = false;
+      const playPauseButton = document.getElementById('playPauseButton');
+      
+      playPauseButton.addEventListener('click', function() {
+        paused = !paused;
+        if (paused) {
+          playPauseButton.textContent = 'Play';
+        } else {
+          playPauseButton.textContent = 'Pause';
+        }
+      });
+
       function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
@@ -207,18 +227,19 @@
         return array;
       }
 
-      const shuffledImages = shuffleArray(images); // Shuffle the images array
+      const shuffledImages = shuffleArray(images);
+      let currentIndex = 0;
 
       function showImages() {
-        const imageIndex = Math.floor(Math.random() * shuffledImages.length);
-        const imageSrc = shuffledImages[imageIndex];
-        const img = new Image();
-        img.src = imageSrc;
-        img.onload = function() {
-          // Remove existing images before adding new one
-          document.querySelectorAll('img').forEach(el => el.remove());
-          document.body.appendChild(img);
-        };
+        if (!paused) {
+          const img = new Image();
+          img.src = shuffledImages[currentIndex];
+          img.onload = function() {
+            document.querySelectorAll('img').forEach(el => el.remove());
+            document.body.appendChild(img);
+            currentIndex = (currentIndex + 1) % shuffledImages.length;
+          };
+        }
       }
 
       setInterval(showImages, 18000); // Adjust the interval as needed
@@ -226,3 +247,6 @@
   </script>
 </body>
 </html>
+
+
+
