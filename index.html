@@ -1961,6 +1961,17 @@ A special person like you deserves the very best celebration. I know your specia
         var eventDetails = document.getElementById(eventId);
         eventDetails.style.display = 'none';
     }
+ 
+  function closeEvent(eventId) {
+    const eventDetails = document.getElementById(eventId);
+    eventDetails.style.display = 'none';
+
+    // Scroll the page to the top of the event button
+    const eventButton = document.querySelector(`[onclick="toggleEvent('${eventId}')"]`);
+    eventButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+
 
     function showContent(contentId) {
         var contents = document.querySelectorAll('.content');
